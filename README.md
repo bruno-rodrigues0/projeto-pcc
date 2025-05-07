@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# Educa Drones - Site Institucional
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém o código-fonte do site institucional do **Educa Drones**, um projeto educacional desenvolvido pelo Instituto Federal Baiano - Campus Guanambi, que visa integrar a metodologia STEAM (Ciência, Tecnologia, Engenharia, Artes e Matemática) no ensino de drones. O objetivo do site é divulgar o projeto, suas iniciativas, eventos e compartilhar os avanços e competições realizadas, envolvendo estudantes e educadores em atividades práticas de aprendizado.
 
-Currently, two official plugins are available:
+## Visão Geral
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O **Educa Drones** oferece uma plataforma inovadora de aprendizado prático, utilizando drones de asa rotativa para ensinar conceitos de física, matemática, engenharia e programação. Além disso, o projeto promove a participação de estudantes em competições de drones e workshops, criando uma experiência educacional imersiva e dinâmica.
 
-## Expanding the ESLint configuration
+Este site serve como a principal fonte de informação sobre o projeto, fornecendo detalhes sobre sua missão, atividades e como outras instituições podem participar e implementar a metodologia STEAM com drones.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Funcionalidades
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Home Page**: Apresentação do Educa Drones e seu impacto na educação.
+- **Sobre Nós**: Detalhes sobre a história do projeto, missão e impacto.
+- **Modelos de Drones**: Informações sobre os diferentes modelos de drones desenvolvidos pelo projeto.
+- **Competições e Eventos**: Destaque para eventos e competições onde os drones são usados como ferramentas educacionais.
+- **Oficinas e Workshops**: Calendário e informações sobre eventos e treinamentos.
+- **Contato**: Formulário de contato para parcerias e mais informações.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tecnologias Usadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Este site foi desenvolvido utilizando as seguintes tecnologias:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **HTML5**: Estruturação do conteúdo e estrutura do site.
+- **CSS3**: Estilo e design responsivo, garantindo que o site funcione em todos os dispositivos.
+- **JavaScript (ES6+)**: Interatividade no site, incluindo animações e formulários dinâmicos.
+- **React.js**: Biblioteca JavaScript para construir interfaces de usuário dinâmicas e responsivas.
+- **React Router**: Gerenciamento de rotas para navegação entre páginas.
+- **Tailwind CSS**: Framework de CSS para desenvolvimento rápido de layouts responsivos e estilizados.
+- **Node.js**: Ambiente de execução JavaScript no backend (se necessário para APIs ou funcionalidades de servidor).
+- **Vite**: Ferramenta de build e empacotamento de front-end de alta performance, usada para acelerar o desenvolvimento e otimizar a construção do site.
+
+## Licença
+
+Este projeto é licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+
+## Criador
+
+Desenvolver web Gustavo Costa
+
+- **E-mail**: gustavosncosta@gmail.com
+- **Portfolio**: [www.gustavocosta.me](https://www.gustavocosta.me/)
+- **LinkedIn**: [Gustavo Costa](https://www.linkedin.com/in/gustavosncosta)
+- **GitHub**: [OGustavoCosta](https://github.com/OGustavoCosta)
+
+---
+
+**Educa Drones** é um projeto que inspira jovens a explorarem novas possibilidades tecnológicas. Junte-se a nós na transformação do ensino através da inovação!
