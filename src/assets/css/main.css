@@ -5,6 +5,7 @@
 @import "./base/typography.css";
 
 /* Components */
+@import "./components/button.css";
 
 /* Theme */
 @import "./theme/theme-light.css";
@@ -14,3 +15,18 @@
 @import "./state/is-hidden.css";
 
 /* Utils */
+@theme{
+    --breakpoint-xmd: 32rem;
+}
+
+.bg-banner{
+    background-image: url('../../../public/imagens/banners/banner-imav-outdoor.jpg');
+    background-position: top;
+    background-size: cover;
+}
+
+.bg-if-banner{
+    background-image: url('../../../public/imagens/backgrounds/Destaque-IF-Baiano-7.jpg');
+    background-position: center;
+    background-size: cover;
+}

@@ -5,8 +5,8 @@ function Details(props){
     const { title, text } = props
 
     return(
-        <div className="details">
-            <header className="datails__header">
+        <div className="details w-full">
+            <header className="datails__header flex justify-between items-center gap-3 py-4 px-6 rounded-lg text-background-light bg-highlight-light">
                 <h3 className="details__title">{title}</h3>
                 <ChevronRight/>
             </header>

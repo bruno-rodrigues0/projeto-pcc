@@ -30,12 +30,12 @@ function HomeFaQ(){
     ]
 
     return(
-        <section className="section">
+        <section className="section py-8 w-full grid gap-5">
             <header className="section__header">
-                <h3 className="section__caption uppercase">FaQ</h3>
-                <h2 className="section__title">Perguntas Frequentes</h2>
+                <h3 className="section__caption poppins-semibold text-highlight-light">FaQ</h3>
+                <h2 className="section__title text-4xl poppins-bold">Perguntas Frequentes</h2>
             </header>
-            <div className="section__details">
+            <div className="section__details grid gap-3">
                 {questions.map((question) => (
                     <Details key={question.id} title={question.title}  text={question.text}/>
                 ))}

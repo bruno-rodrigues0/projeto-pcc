@@ -1,6 +1,6 @@
 function Footer(){
     return(
-        <footer>
+        <footer className="footer">
             <section>
                 <article>
                     <header className="article__header">
