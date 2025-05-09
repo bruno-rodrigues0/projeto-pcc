@@ -16,7 +16,7 @@ function HomeNews(){
             id: 1,
             title: 'ObaDrones: 1 Olimpíada Baiana de Drones',
             date: '06 de maio de 2025',
-            img: 'public/imagens/news/OBaDrones.png',
+            img: 'imagens/news/OBaDrones.png',
             altImg: 'OBaDrones',
             link: '',
 
