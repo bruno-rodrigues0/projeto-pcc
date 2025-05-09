@@ -1,4 +1,4 @@
-function NewsCard(props){
+function NewsCard(props: any){
     const {title, link, img, altImg, date} = props
 
     return(

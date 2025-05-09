@@ -1,4 +1,4 @@
-function IconButton(props){
+function IconButton(props: any){
     const { link, icon, text } = props
 
     return(

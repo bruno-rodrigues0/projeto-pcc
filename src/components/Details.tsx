@@ -1,7 +1,7 @@
 /* Icons */
 import { ChevronRight } from "lucide-react"
 
-function Details(props){
+function Details(props: any){
     const { title, text } = props
 
     return(

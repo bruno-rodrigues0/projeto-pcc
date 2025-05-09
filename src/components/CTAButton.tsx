@@ -1,4 +1,4 @@
-function CTAButton(props){
+function CTAButton(props: any){
     const { link, text} = props
 
     return(
