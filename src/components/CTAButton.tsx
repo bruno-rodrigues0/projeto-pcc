@@ -1,5 +1,5 @@
 function CTAButton(props){
-    const { link, text } = props
+    const { link, text} = props
 
     return(
         <a className="uppercase" href={link}>
