@@ -122,13 +122,20 @@ function HomePage(){
 
                 {/* Localização */}
                 <div className="main__background bg-if-banner">
-                    <section className="section flex flex-row-reverse">
-                        <article className="article">
-                            <header className="article__header">
+                    <section className="section flex flex-col md:flex-row gap-6 md:gap-12 py-8 pb-14">
+                        <header className="section__header md:hidden">
+                            <h3 className="section__caption poppins-semibold text-highlight-light">FaQ</h3>
+                            <h2 className="section__title text-4xl poppins-bold">Perguntas Frequentes</h2>
+                        </header>
+                        <div className="section__map w-full max-w-lg aspect-3/2 border-4 overflow-hidden rounded-lg border-background-light">
+                            <iframe className="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3866.175810768064!2d-42.693144323500455!3d-14.301215486150488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x75ac892620e8ee9%3A0xedfa55cda6e97ceb!2sCETEIA%20-%20Centro%20de%20Estudos%20Tecnol%C3%B3gicos%20em%20Inform%C3%A1tica%20e%20Agronomia!5e0!3m2!1spt-BR!2sbr!4v1746805396126!5m2!1spt-BR!2sbr"  loading="lazy"></iframe>
+                        </div>
+                        <article className="article w-full flex flex-col gap-3">
+                            <header className="article__header hidden md:block">
                                 <h3 className="article__caption poppins-semibold text-highlight-light">FaQ</h3>
                                 <h2 className="article__title text-4xl poppins-bold">Perguntas Frequentes</h2>
                             </header>
-                            <div className="article__content">
+                            <div className="article__content grid gap-3">
                                 <p>O Educa Drones opera no Centro de Estudos Tecnológicos em Informática e Agronomia (CETEIA) do Instituto Federal Baiano - campus Guanambi</p>
 
                                 <p>Caixa Postal Nº 09 Distrito de, Saída p/ ceraíma - n, – Zona Rural, Guanambi - BA, 46430-000</p>
@@ -137,9 +144,6 @@ function HomePage(){
                                 <CTAButton text={"Acesse pelo Mapa"} link={"https://maps.app.goo.gl/kf8pz8uiDvLF6Cyf9"}/>
                             </div>
                         </article>
-                        <div className="section__map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3866.175810768064!2d-42.693144323500455!3d-14.301215486150488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x75ac892620e8ee9%3A0xedfa55cda6e97ceb!2sCETEIA%20-%20Centro%20de%20Estudos%20Tecnol%C3%B3gicos%20em%20Inform%C3%A1tica%20e%20Agronomia!5e0!3m2!1spt-BR!2sbr!4v1746805396126!5m2!1spt-BR!2sbr" width="600" height="450" loading="lazy"></iframe>
-                        </div>
                     </section>
                 </div>
             </main>

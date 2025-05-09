@@ -50,8 +50,8 @@ function HomeNews(){
     return(
         <section className="section py-12 grid gap-5">
             <header className="section__header">
-                <h3 className="section__caption poppins-semibold text-highlight-light">Educa Drones</h3>
-                <h2 className="section__title text-4xl poppins-bold">Onde o ensino se torna inovação</h2>
+                <h3 className="section__caption poppins-semibold text-highlight-light">Em Destaque</h3>
+                <h2 className="section__title text-4xl poppins-bold">Notícias e Eventos</h2>
             </header>
             <div className="section__cards grid grid-cols-1 xmd:grid-cols-2 md:grid-cols-4 gap-2.5 gap-y-5">
                 {news.map((obg) => (
