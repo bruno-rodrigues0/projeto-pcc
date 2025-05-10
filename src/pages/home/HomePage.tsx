@@ -15,7 +15,7 @@ function HomePage(){
                 {/* Hero */}
                 <div className="main__background bg-banner">
                     <section className="section section--hero w-full min-h-[600px] flex items-center justify-start text-background-light">
-                        <div className="hero max-w-[500px]">
+                        <div className="hero max-w-[500px] grid gap-2">
                             <h2 className="hero__caption uppercase poppins-medium">Educa Drones</h2>
                             <h1 className="hero__title poppins-extrabold text-5xl">Onde o ensino se torna inovação</h1>
                             <p className="hero__text poppins-medium text-xl">Seja parte dessa transformação! Convide sua escola a explorar o mundo dos drones com o Educa Drones. </p>
@@ -74,17 +74,17 @@ function HomePage(){
                 <div className="main__background bg-background-dark">
                     <section className="section grid gap-3 pt-4 pb-8">
                         <h2 className="section__title text-center text-light">Parceiros e Colaboradores</h2>
-                        <div className="section__tracker flex gap-25 justify-center items-center">
+                        <div className="section__tracker flex xmd:gap-25 gap-10 justify-center  items-center">
                             <a href="">
-                                <img className="backdrop-saturate-0" src="public\imagens\apoiadores\prefeituraGuanambi.png" alt="" />
+                                <img className="backdrop-saturate-0" src="imagens\apoiadores\prefeituraGuanambi.png" alt="" />
                             </a>
 
                             <a href="">
-                                <img className="backdrop-saturate-0" src="public\imagens\apoiadores\ifbaiano.png" alt="" />
+                                <img className="backdrop-saturate-0" src="imagens\apoiadores\ifbaiano.png" alt="" />
                             </a>
                             
                             <a href="">
-                                <img className="backdrop-saturate-0" src="public\imagens\apoiadores\ceteia.png" alt="" />
+                                <img className="backdrop-saturate-0" src="imagens\apoiadores\ceteia.png" alt="" />
                             </a>
                         </div>
                     </section>
@@ -99,7 +99,7 @@ function HomePage(){
                 <div className="main__background bg-background-dark">
                     <section className="section grid gap-3 pt-4 pb-8">
                         <h2 className="section__title text-center text-light">Equipes Filiadas</h2>
-                        <div className="section__tracker flex gap-25 justify-center">
+                        <div className="section__tracker flex xmd:gap-25 gap-12 justify-center">
                             <a href="">
                                 <img className="backdrop-saturate-0" src="imagens\equipes\carcara-gray.png" alt="" />
                             </a>
@@ -124,8 +124,8 @@ function HomePage(){
                 <div className="main__background bg-if-banner">
                     <section className="section flex flex-col md:flex-row gap-6 md:gap-12 py-8 pb-14">
                         <header className="section__header md:hidden">
-                            <h3 className="section__caption poppins-semibold text-highlight-light">FaQ</h3>
-                            <h2 className="section__title text-4xl poppins-bold">Perguntas Frequentes</h2>
+                            <h3 className="section__caption poppins-semibold text-highlight-light">Localização</h3>
+                            <h2 className="section__title text-4xl poppins-bold">Onde Estamos</h2>
                         </header>
                         <div className="section__map w-full max-w-lg aspect-3/2 border-4 overflow-hidden rounded-lg border-background-light">
                             <iframe className="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3866.175810768064!2d-42.693144323500455!3d-14.301215486150488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x75ac892620e8ee9%3A0xedfa55cda6e97ceb!2sCETEIA%20-%20Centro%20de%20Estudos%20Tecnol%C3%B3gicos%20em%20Inform%C3%A1tica%20e%20Agronomia!5e0!3m2!1spt-BR!2sbr!4v1746805396126!5m2!1spt-BR!2sbr"  loading="lazy"></iframe>

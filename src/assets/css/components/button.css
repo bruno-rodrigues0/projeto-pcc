@@ -2,18 +2,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
 
-    border: 2px solid;
+    padding: 0.625rem;
+    border-radius: 0.375rem;
+    border: 0.125rem solid;
+    
+    transition: 0.5s;
 }
 
 .button--cta{
     border-color: var(--color-highlight-light);
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     color: var(--color-highlight-light);
     font-weight: 500;
-    padding: 8px;
-    border-radius: 5px;
-    transition: 0.5s;
+    
 }
 
 .button--cta:hover{

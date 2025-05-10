@@ -2,7 +2,7 @@ function IconButton(props: any){
     const { link, icon, text } = props
 
     return(
-        <a href={link}>
+        <a className="button button-icon" href={link}>
             {icon}
             <span>{text}</span>
         </a>

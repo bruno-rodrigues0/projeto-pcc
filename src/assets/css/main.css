@@ -6,6 +6,7 @@
 
 /* Components */
 @import "./components/button.css";
+@import "./components/form.css";
 
 /* Theme */
 @import "./theme/theme-light.css";
@@ -30,3 +31,4 @@
     background-position: center;
     background-size: cover;
 }
+

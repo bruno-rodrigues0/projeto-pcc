@@ -1,0 +1,15 @@
+.form__input{
+    font-size: var(--text-sm);
+    
+    border: 2px solid var(--color-highlight-light);
+    border-radius: 5px;
+    padding: 0.625rem 0.875rem;
+    resize: none;
+
+    transition: 0.5s;
+}
+
+.form__input:focus{
+    outline: none;
+    border-color: var(--color-background-light);
+}

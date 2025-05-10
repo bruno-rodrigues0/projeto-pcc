@@ -24,3 +24,11 @@ body{
     width: 100%;
     max-width: 1280px;
 }
+
+strong{
+    font-weight: 500;
+}
+
+label{
+    display: grid;
+}

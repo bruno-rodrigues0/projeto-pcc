@@ -1,0 +1,10 @@
+.is-active{
+    display: block;
+}
+
+.nav__mobile.is-active{
+    display: flex;
+    transform: translateX(0);
+    translate: 0 var(--tw-translate-y);
+    box-shadow: 0px 0px 50px #00000050;
+}
