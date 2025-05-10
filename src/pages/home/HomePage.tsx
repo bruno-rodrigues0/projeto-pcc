@@ -132,8 +132,8 @@ function HomePage(){
                         </div>
                         <article className="article w-full flex flex-col gap-3">
                             <header className="article__header hidden md:block">
-                                <h3 className="article__caption poppins-semibold text-highlight-light">FaQ</h3>
-                                <h2 className="article__title text-4xl poppins-bold">Perguntas Frequentes</h2>
+                                <h3 className="article__caption poppins-semibold text-highlight-light">Localização</h3>
+                                <h2 className="article__title text-4xl poppins-bold">Onde Estamos</h2>
                             </header>
                             <div className="article__content grid gap-3">
                                 <p>O Educa Drones opera no Centro de Estudos Tecnológicos em Informática e Agronomia (CETEIA) do Instituto Federal Baiano - campus Guanambi</p>
