@@ -38,8 +38,8 @@ function Footer(){
                 <article className="article flex flex-col justify-between">
                     <div className="grid gap-5">
                         <header className="article__header">
-                            <h3 className="article__caption poppins-semibold">FaQ</h3>
-                            <h2 className="article__title text-4xl poppins-bold">Perguntas Frequentes</h2>
+                            <h3 className="article__caption poppins-semibold">Faça Parte</h3>
+                            <h2 className="article__title text-4xl poppins-bold">Entre em Contato</h2>
                         </header>
                         <div className="article__content text-xl">
                             <p><strong>Têm interesse em levar o projeto para sua escola?</strong> Entre em contato através do formulário ou por nossas redes sociais</p>
