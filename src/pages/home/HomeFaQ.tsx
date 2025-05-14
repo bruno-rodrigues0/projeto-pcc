@@ -5,27 +5,27 @@ function HomeFaQ(){
         {
             id: 1,
             title: 'Quem pode participar do projeto Educa Drones?',
-            text: '',
+            text: 'O projeto Educa Drones tem como público alvo estudantes e professores de escolas e universidades, sejam elas públicas ou particulares.',
         },
         {
             id: 2,
-            title: 'Como o Educa Drones pode ser implementado em minha escola?',
-            text: '',
+            title: 'Como implementar o Educa Drones em minha escola?',
+            text: 'Para implementar o Educa Drones em sua escola, é essencial contar com um ou mais professores dedicados, responsáveis pela coordenação das atividades. Além disso, será necessário adquirir os recursos adequados para realizar as oficinas, garantindo uma experiência prática e inovadora para os alunos.',
         },
         {
             id: 3,
             title: 'O Educa Drones é adequado para todas as idades?',
-            text: '',
+            text: 'O projeto Educa Drones se adapta a públicos de diferentes idades, entretanto sugerimos que a idade mínima seja de 14 anos.',
         },
         {
             id: 4,
             title: 'Quais recursos são necessários para implementar o Educa Drones na minha escola?',
-            text: '',
+            text: 'Para implementação é necessário obter um kit de Drone Educacional, ferramentas básicas de soldagem e um computador ou notebook. Além disso o Educa Drones disponiliza material didático gratuito e o treinamento de montagem e configuração de drones',
         },
         {
             id: 5,
             title: 'O Educa Drones oferece suporte técnico para as escolas participantes?',
-            text: '',
+            text: 'Todas as escolas participantes recebem suporte técnico individual através dos canais de comunicação: telefone, whatsapp, email e rede social.',
         },
     ]
 

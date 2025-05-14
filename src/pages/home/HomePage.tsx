@@ -1,16 +1,14 @@
-/* Icons */
-
 /* Components */
 import Navigation from "../../components/Navigation"
 import Footer from "../../components/Footer"
-import CTAButton from "../../components/CTAButton"
+import CTAButton from "../../components/buttons/CTAButton"
 import HomeNews from "./HomeNews"
 import HomeFaQ from "./HomeFaQ"
 
 function HomePage(){
     return(
         <div className="w-full min-h-[100lvh] poppins-regular text-base text-dark">
-            <Navigation/>
+            <Navigation type={'fixed'}/>
             <main className="main">
                 {/* Hero */}
                 <div className="main__background bg-banner">
@@ -41,15 +39,15 @@ function HomePage(){
                             </div>
                         </article>
                         <div className="section__figures relative max-w-lg md:translate-y-6">
-                            <figure className="w-[70%] aspect-square border-4 rounded-xl border-background-light overflow-hidden">
+                            <figure className="figure w-[70%] aspect-square border-4 rounded-xl border-background-light overflow-hidden">
                                 <img className="w-full h-full object-cover" src="imagens\pictures\MCD-petrolina.jpg" alt="petrolina" />
                                 <figcaption></figcaption>
                             </figure>
-                            <figure className="w-[40%] border-4 rounded-xl border-background-light overflow-hidden aspect-3/4 absolute top-10 right-2">
+                            <figure className="figure w-[40%] border-4 rounded-xl border-background-light overflow-hidden aspect-3/4 absolute top-10 right-2">
                                 <img className="w-full h-full object-cover" src="imagens\pictures\preIMAV-testes.png" alt="" />
                                 <figcaption></figcaption>
                             </figure>
-                            <figure className="w-[55%] border-4 rounded-xl border-background-light overflow-hidden aspect-5/3 translate-x-10 -translate-y-20">
+                            <figure className="figure w-[55%] border-4 rounded-xl border-background-light overflow-hidden aspect-5/3 translate-x-10 -translate-y-20">
                                 <img className="w-full h-full object-cover" src="imagens\pictures\formulaDrone.png" alt="" />
                                 <figcaption></figcaption>
                             </figure>

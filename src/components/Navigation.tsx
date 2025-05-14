@@ -1,10 +1,15 @@
+/* Rotas */
+import { Link } from 'react-router';
+
 /* Icons */
 import { Menu, X } from "lucide-react"
 
 /* Hooks */
 import { useRef } from "react"
 
-function Navigation(){
+function Navigation(props: any){
+    const { type } = props
+
     const navRef = useRef<HTMLDivElement>(null)
     
     const ToggleNavigation = () => {
@@ -14,7 +19,7 @@ function Navigation(){
     }
 
     return(
-        <header className="header header--navigation absolute text-background-light">
+        <header className={`header header--navigation ${'fixed' == type ? 'absolute text-background-light' : 'text-highlight-dark'} `}>
             <nav className="nav w-full flex justify-between items-center py-5">
                 <div className="nav__menu-icon md:hidden" onClick={ToggleNavigation}>
                     <Menu size={25} strokeWidth={2}/>
@@ -23,11 +28,12 @@ function Navigation(){
 
                 {/* Navigation */}
                 <ul className="nav__list hidden gap-5 md:flex">
-                    <li className="nav__item"><a href="#" className="nav__link">Início</a></li>
-                    <li className="nav__item"><a href="#" className="nav__link">Quem Somos</a></li>
-                    <li className="nav__item"><a href="#" className="nav__link">Nossa Equipe</a></li>
-                    <li className="nav__item"><a href="#" className="nav__link">Eventos</a></li>
-                    <li className="nav__item"><a href="#" className="nav__link">Contato</a></li>
+                    <li className="nav__item"><Link to="/" className="nav__link">Início</Link></li>
+                    <li className="nav__item"><Link to="/sobre" className='nav__link'>Quem Somos</Link></li>
+                    <li className="nav__item"><Link to="/integrantes" className="nav__link">Nossa Equipe</Link></li>
+                    <li className="nav__item"><Link to="/noticias" className="nav__link">Notícias</Link></li>
+                    <li className="nav__item"><Link to="/galeria" className="nav__link">Galeria</Link></li>
+                    <li className="nav__item"><a href='#contato' className="nav__link">Contato</a></li>
                 </ul>
 
                 {/* Mobile */}

@@ -1,5 +1,5 @@
 /* Components */
-import NewsCard from "../../components/NewsCard"
+import NewsCard from "../../components/cards/NewsCard"
 
 function HomeNews(){
     interface NewsFormat{

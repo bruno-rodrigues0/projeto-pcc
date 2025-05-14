@@ -1,15 +1,16 @@
 /* Components */
 import Footer from "../components/Footer"
+import Navigation from "../components/Navigation"
 
-function LinkTreePage(){
+function TeamPage(){
     return(
         <div>
-            <header></header>
+            <Navigation/>
             <main className="main">
                 <section className="main__backgroung">
                     <section className="section section--hero">
                         <article>
-                            <h1>LinkTree</h1>
+                            <h1>Nossa Equipe</h1>
                         </article>
                         <figure>
                             <img src="" alt="" />
@@ -22,4 +23,4 @@ function LinkTreePage(){
     )
 }
 
-export default LinkTreePage
+export default TeamPage

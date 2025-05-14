@@ -2,7 +2,7 @@
 import { Github, Instagram, Linkedin, Smartphone } from "lucide-react"
 
 /* Components */
-import IconButton from "./IconButton"
+import IconButton from "./buttons/IconButton"
 
 function Footer(){
     const buttons = [
@@ -10,7 +10,7 @@ function Footer(){
             id: 1,
             text: 'instagram',
             icon: <Instagram/>,
-            link: '',
+            link: 'https://www.instagram.com/educa_drones/',
         },
         {
             id: 2,
@@ -22,7 +22,7 @@ function Footer(){
             id: 3,
             text: 'github',
             icon: <Github/>,
-            link: '',
+            link: 'https://github.com/EDUCA-DRONES',
         },
         {
             id: 4,
@@ -33,7 +33,7 @@ function Footer(){
     ]
 
     return(
-        <footer className="footer bg-highlight-dark text-background-light py-10 grid gap-10">
+        <footer id="contato" className="footer bg-highlight-dark text-background-light py-10 grid gap-10">
             <section className="footer__section grid grid-cols-1 md:grid-cols-2 gap-12">
                 <article className="article flex flex-col justify-between">
                     <div className="grid gap-5">
