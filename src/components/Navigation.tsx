@@ -44,11 +44,12 @@ function Navigation(props: any){
                     
                     {/* Mobile Navigation */}
                     <ul className="nav__list grid gap-3">
-                        <li onClick={ToggleNavigation} className="nav__item"><a href="#" className="nav__link">Início</a></li>
-                        <li onClick={ToggleNavigation} className="nav__item"><a href="#" className="nav__link">Quem Somos</a></li>
-                        <li onClick={ToggleNavigation} className="nav__item"><a href="#" className="nav__link">Nossa Equipe</a></li>
-                        <li onClick={ToggleNavigation} className="nav__item"><a href="#" className="nav__link">Eventos</a></li>
-                        <li onClick={ToggleNavigation} className="nav__item"><a href="#" className="nav__link">Contato</a></li>
+                    <li className="nav__item"><Link to="/" className="nav__link">Início</Link></li>
+                    <li className="nav__item"><Link to="/sobre" className='nav__link'>Quem Somos</Link></li>
+                    <li className="nav__item"><Link to="/integrantes" className="nav__link">Nossa Equipe</Link></li>
+                    <li className="nav__item"><Link to="/noticias" className="nav__link">Notícias</Link></li>
+                    <li className="nav__item"><Link to="/galeria" className="nav__link">Galeria</Link></li>
+                    <li className="nav__item " onClick={ToggleNavigation}><a href='#contato' className="nav__link">Contato</a></li>
                     </ul>
                 </div>
             </nav>
