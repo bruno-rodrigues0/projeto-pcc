@@ -35,7 +35,7 @@ function HomePage(){
                                 <p>O projeto não só aproxima os alunos das tecnologias do futuro, mas também os prepara para os desafios de um mercado cada vez mais digital e interconectado. Ao promover a construção e operação de drones, o projeto estimula a criatividade, a resolução de problemas e a colaboração, impactando positivamente a forma como os jovens aprendem e se conectam com a inovação tecnológica.</p>
                             </div>
                             <div className="article__buttons">
-                                <CTAButton text={"Saiba Mais"} link={"#"}/>
+                                <CTAButton text={"Saiba Mais"} link={"/sobre"} target={""}/>
                             </div>
                         </article>
                         <div className="section__figures relative max-w-lg md:translate-y-6">

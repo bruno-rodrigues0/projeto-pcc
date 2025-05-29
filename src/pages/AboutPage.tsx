@@ -42,7 +42,7 @@ function AboutPage(){
                         </article>
                         <div className="section__figures flex justify-center">
                             <figure className="figure aspect-16/9 border-4 rounded-xl border-background-light overflow-hidden max-w-xl">
-                                <img className="figure__img w-full h-full object-cover" src="imagens\pictures\ifsc\todos-pista.jpg" alt="" />
+                                <img className="figure__img w-full h-full object-cover" src="imagens\pictures\ifsc\2023\todos-pista.jpg" alt="" />
                             </figure>
                         </div>
                     </section>
@@ -143,13 +143,13 @@ function AboutPage(){
                         <article className="article">
                             <div className="relative pb-[12%] max-w-xl w-[45%] float-left mr-[5%] mb-6 hidden md:block">
                                 <figure className="figure aspect-4/3 border-4 rounded-xl border-background-dark overflow-hidden w-[75%]">
-                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\ifsc\oficina.png" alt="" />
+                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\ifsc\2023\oficina.png" alt="" />
                                 </figure>
                                 <figure className="figure aspect-2/3 border-4 rounded-xl border-background-dark overflow-hidden w-[35%] absolute right-0 bottom-[15%]">
                                     <img className="figure__img w-full h-full object-cover" src="imagens\pictures\mnr.jpg" alt="" />
                                 </figure>
                                 <figure className="figure aspect-3/2 border-4 rounded-xl border-background-dark overflow-hidden w-[55%] absolute left-[18%] bottom-0">
-                                    <img className="figure__img w-full h-full object-cover" src="imagens/pictures/ifsc/todos-pista.jpg" alt="" />
+                                    <img className="figure__img w-full h-full object-cover" src="imagens/pictures/ifsc/2023/todos-pista.jpg" alt="" />
                                 </figure>
                             </div>
 
@@ -160,10 +160,10 @@ function AboutPage(){
                             <p className="article__text pb-5">Naquele ano o projeto também teve a oportunidade de participar da Mostra Nacional de Robótica com o projeto Drone Modular Para Robótica Educacional e Competições Estudantis, que havia sido iniciado pré pandemia, mas que agora em estágio avançado gerou a primeira bolsa de Iniciação Científica Jr. do CNPq para o projeto.</p>
                         </article>
 
-                        <section className="section__figures max-w-xl w-full bg-amber-100 md:hidden">
+                        <section className="section__figures max-w-xl w-full md:hidden">
                             <div className="relative pb-[25%] max-w-xl w-full">
                                 <figure className="figure aspect-4/3 border-4 rounded-xl border-background-dark overflow-hidden w-[75%]">
-                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\ifsc\oficina.png" alt="" />
+                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\ifsc\2023\oficina.png" alt="" />
                                 </figure>
 
                                 <figure className="figure aspect-2/3 border-4 rounded-xl border-background-dark overflow-hidden w-[35%] absolute right-0 bottom-[15%]">
@@ -171,59 +171,84 @@ function AboutPage(){
                                 </figure>
 
                                 <figure className="figure aspect-3/2 border-4 rounded-xl border-background-dark overflow-hidden w-[55%] absolute left-[18%] bottom-0">
-                                    <img className="figure__img w-full h-full object-cover" src="imagens/pictures/ifsc/todos-pista.jpg" alt="" />
+                                    <img className="figure__img w-full h-full object-cover" src="imagens/pictures/ifsc/2023/todos-pista.jpg" alt="" />
                                 </figure>
                             </div>
                         </section>
                     </section>
 
                     {/* 2024 */}
-                    <section className="section md:grid md:grid-cols-2">
+                    <section className="section flex flex-col gap-5 items-center">
                         <section className="section__articles grid gap-15">
-                            {/* Expansão Pedagógica */}
-                            <article className="article grid gap-5">
-                                <header className="article__header">
-                                    <h3 className="article__title font-bold text-xl">Expansão Pedagógica</h3>
-                                </header>
-                                <div className="article__content">
-                                    <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor eget lectus quis varius. Nulla consectetur nibh vel molestie interdum. Morbi in rhoncus nisi. Praesent viverra lorem mi, a vulputate nulla consequat quis. Fusce purus nulla, aliquet nec massa non.</p>
-                                    <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum auctor tellus a bibendum. Curabitur mollis arcu in fringilla imperdiet. Sed pharetra, justo vitae tristique porta, magna odio rutrum ipsum, et gravida ipsum ipsum at turpis. Vestibulum massa justo, mollis et risus eget, rutrum semper odio. Sed sit amet laoreet tortor. Suspendisse tortor ligula, elementum eu felis in, ultricies aliquam metus. Nulla vulputate turpis et ipsum lobortis rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                            <article className="article">
+                                <div className="relative pb-[0%] max-w-xl w-[45%] float-right ml-[5%] mb-6 hidden md:block justify-items-end">
+                                    <figure className="figure aspect-4/3 border-4 rounded-xl border-background-dark overflow-hidden w-[75%] float mb-[10%]">
+                                        <img className="figure__img w-full h-full object-cover" src="imagens\pictures\mcd\alagoinhas\mcd-alagoinhas.png" alt="" />
+                                    </figure>
+
+                                    <figure className="figure aspect-4/3 border-4 rounded-xl border-background-dark overflow-hidden w-[70%] mb-[10%] float">
+                                        <img className="figure__img w-full h-full object-cover" src="imagens\pictures\imav\outdoor-mission.png" alt="" />
+                                    </figure>
+
+                                    <figure className="figure aspect-16/10 border-4 rounded-xl border-background-dark overflow-hidden w-[65%] mr-[20%] float">
+                                        <img className="figure__img w-full h-full object-cover" src="imagens\pictures\imav\outdoor-colibrifly.png" alt="" />
+                                    </figure>
+
+                                    <figure className="figure aspect-3/2 border-4 rounded-xl border-background-dark overflow-hidden w-[55%] absolute top-[25%] left-0">
+                                        <img className="figure__img w-full h-full object-cover" src="imagens\pictures\cros.jpg" alt="" />
+                                    </figure>
+
+                                    <figure className="figure aspect-3/2 border-4 rounded-xl border-background-dark overflow-hidden w-[50%] absolute bottom-[18%] left-[5%]">
+                                        <img className="figure__img w-full h-full object-cover" src="imagens\pictures\ifsc\2024\IFSC.png" alt="" />
+                                    </figure>
+
+                                    <figure className="figure aspect-1/1 border-4 rounded-xl border-background-dark overflow-hidden w-[25%] absolute bottom-[20%] right-[8%]">
+                                        <img className="figure__img w-full h-full object-cover" src="imagens\pictures\colibri\Logo Colibri - fundo branco.jpg" alt="" />
+                                    </figure>
                                 </div>
-                            </article>
-                            
-                            {/* 2024, Um ano de Conquistas */}
-                            <article className="article grid gap-5">
-                                <header className="article__header">
-                                    <h3 className="article__title font-bold text-xl">2024, Um Ano de Conquistas</h3>
-                                </header>
-                                <div className="article__content">
-                                    <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor eget lectus quis varius. Nulla consectetur nibh vel molestie interdum. Morbi in rhoncus nisi. Praesent viverra lorem mi, a vulputate nulla consequat quis. Fusce purus nulla, aliquet nec massa non.</p>
-                                    <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum auctor tellus a bibendum. Curabitur mollis arcu in fringilla imperdiet. Sed pharetra, justo vitae tristique porta, magna odio rutrum ipsum, et gravida ipsum ipsum at turpis. Vestibulum massa justo, mollis et risus eget, rutrum semper odio. Sed sit amet laoreet tortor. Suspendisse tortor ligula, elementum eu felis in, ultricies aliquam metus. Nulla vulputate turpis et ipsum lobortis rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                                    <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum auctor tellus a bibendum. Curabitur mollis arcu in fringilla imperdiet. Sed pharetra, justo vitae tristique porta, magna odio rutrum ipsum, et gravida ipsum ipsum at turpis. Vestibulum massa justo, mollis et risus eget, rutrum semper odio. Sed sit amet laoreet tortor. Suspendisse tortor ligula, elementum eu felis in, ultricies aliquam metus. Nulla vulputate turpis et ipsum lobortis rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                                </div>
+
+                                {/* Expansão Pedagógica */}
+                                <h3 className="article__title font-bold text-xl pb-5">Expansão Pedagógica</h3>
+
+                                <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor eget lectus quis varius. Nulla consectetur nibh vel molestie interdum. Morbi in rhoncus nisi. Praesent viverra lorem mi, a vulputate nulla consequat quis. Fusce purus nulla, aliquet nec massa non.</p>
+                                <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum auctor tellus a bibendum. Curabitur mollis arcu in fringilla imperdiet. Sed pharetra, justo vitae tristique porta, magna odio rutrum ipsum, et gravida ipsum ipsum at turpis. Vestibulum massa justo, mollis et risus eget, rutrum semper odio. Sed sit amet laoreet tortor. Suspendisse tortor ligula, elementum eu felis in, ultricies aliquam metus. Nulla vulputate turpis et ipsum lobortis rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                                {/* 2024, Um ano de Conquistas */}                              
+                                <h3 className="article__title font-bold text-xl pb-5 pt-20">2024, Um Ano de Conquistas</h3>
+
+                                <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor eget lectus quis varius. Nulla consectetur nibh vel molestie interdum. Morbi in rhoncus nisi. Praesent viverra lorem mi, a vulputate nulla consequat quis. Fusce purus nulla, aliquet nec massa non.</p>
+                                <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum auctor tellus a bibendum. Curabitur mollis arcu in fringilla imperdiet. Sed pharetra, justo vitae tristique porta, magna odio rutrum ipsum, et gravida ipsum ipsum at turpis. Vestibulum massa justo, mollis et risus eget, rutrum semper odio. Sed sit amet laoreet tortor. Suspendisse tortor ligula, elementum eu felis in, ultricies aliquam metus. Nulla vulputate turpis et ipsum lobortis rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum auctor tellus a bibendum. Curabitur mollis arcu in fringilla imperdiet. Sed pharetra, justo vitae tristique porta, magna odio rutrum ipsum, et gravida ipsum ipsum at turpis. Vestibulum massa justo, mollis et risus eget, rutrum semper odio. Sed sit amet laoreet tortor. Suspendisse tortor ligula, elementum eu felis in, ultricies aliquam metus. Nulla vulputate turpis et ipsum lobortis rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                             </article>
                         </section>
                         
-                        <div className="section__figures">
-                            <figure className="figure">
-                                <img src="" alt="" className="figure__img" />
-                            </figure>
-                            <figure className="figure">
-                                <img src="" alt="" className="figure__img" />
-                            </figure>
-                            <figure className="figure">
-                                <img src="" alt="" className="figure__img" />
-                            </figure>
-                            <figure className="figure">
-                                <img src="" alt="" className="figure__img" />
-                            </figure>
-                            <figure className="figure">
-                                <img src="" alt="" className="figure__img" />
-                            </figure>
-                            <figure className="figure">
-                                <img src="" alt="" className="figure__img" />
-                            </figure>
-                        </div>
+                        <section className="section__figures max-w-xl w-full md:hidden">
+                            <div className="relative max-w-xl w-full justify-items-end">
+                                <figure className="figure aspect-4/3 border-4 rounded-xl border-background-dark overflow-hidden w-[75%] float mb-[10%]">
+                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\mcd\alagoinhas\mcd-alagoinhas.png" alt="" />
+                                </figure>
+
+                                <figure className="figure aspect-4/3 border-4 rounded-xl border-background-dark overflow-hidden w-[70%] mb-[10%] float">
+                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\imav\outdoor-mission.png" alt="" />
+                                </figure>
+
+                                <figure className="figure aspect-16/10 border-4 rounded-xl border-background-dark overflow-hidden w-[65%] mr-[20%] float">
+                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\imav\outdoor-colibrifly.png" alt="" />
+                                </figure>
+
+                                <figure className="figure aspect-3/2 border-4 rounded-xl border-background-dark overflow-hidden w-[55%] absolute top-[25%] left-0">
+                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\cros.jpg" alt="" />
+                                </figure>
+
+                                <figure className="figure aspect-3/2 border-4 rounded-xl border-background-dark overflow-hidden w-[50%] absolute bottom-[18%] left-[5%]">
+                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\ifsc\2024\IFSC.png" alt="" />
+                                </figure>
+
+                                <figure className="figure aspect-1/1 border-4 rounded-xl border-background-dark overflow-hidden w-[25%] absolute bottom-[20%] right-[8%]">
+                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\colibri\Logo Colibri - fundo branco.jpg" alt="" />
+                                </figure>
+                            </div>
+                        </section>
                     </section>
 
                     {/* 2025 */}
@@ -243,7 +268,7 @@ function AboutPage(){
                                 </figure>
 
                                 <figure className="figure aspect-1/1 border-4 rounded-xl border-background-dark overflow-hidden w-[25%] absolute top-[20%] left-[20%]">
-                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\Logo Colibri - fundo preto 1.jpg" alt="" />
+                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\colibri\Logo Colibri - fundo preto 1.jpg" alt="" />
                                 </figure>
                             </div>
 
@@ -254,7 +279,7 @@ function AboutPage(){
                             <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum auctor tellus a bibendum. Curabitur mollis arcu in fringilla imperdiet. Sed pharetra, justo vitae tristique porta, magna odio rutrum ipsum, et gravida ipsum ipsum at turpis. Vestibulum massa justo, mollis et risus eget, rutrum semper odio. Sed sit amet laoreet tortor. Suspendisse tortor ligula, elementum eu felis in, ultricies aliquam metus. Nulla vulputate turpis et ipsum lobortis rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                         </article>
 
-                        <section className="section__figures max-w-xl w-full bg-amber-100 md:hidden">
+                        <section className="section__figures max-w-xl w-full md:hidden">
                             <div className="relative pb-[25%] max-w-xl w-full justify-items-end">
                                 <figure className="figure aspect-4/3 border-4 rounded-xl border-background-dark overflow-hidden w-[60%] float">
                                     <img className="figure__img w-full h-full object-cover" src="imagens\pictures\OBaDrones\tasks.jpg" alt="" />

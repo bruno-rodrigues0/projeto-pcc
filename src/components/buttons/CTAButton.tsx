@@ -1,10 +1,13 @@
+/* Routes */
+import { Link } from 'react-router';
+
 function CTAButton(props: any){
-    const { link, text} = props
+    const { link, text, target} = props
 
     return(
-        <a target="_blank" className="button button--cta uppercase" href={link}>
+        <Link to={link} target={target} className="button button--cta uppercase">
             {text}
-        </a>
+        </Link>
     )
 }
 
