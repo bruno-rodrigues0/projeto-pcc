@@ -214,7 +214,7 @@ function AboutPage(){
                                 <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum auctor tellus a bibendum. Curabitur mollis arcu in fringilla imperdiet. Sed pharetra, justo vitae tristique porta, magna odio rutrum ipsum, et gravida ipsum ipsum at turpis. Vestibulum massa justo, mollis et risus eget, rutrum semper odio. Sed sit amet laoreet tortor. Suspendisse tortor ligula, elementum eu felis in, ultricies aliquam metus. Nulla vulputate turpis et ipsum lobortis rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 
                                 {/* 2024, Um ano de Conquistas */}                              
-                                <h3 className="article__title font-bold text-xl pb-5 pt-20">2024, Um Ano de Conquistas</h3>
+                                <h3 className="article__title font-bold text-xl pb-5 pt-10 md:pt-20">2024, Um Ano de Conquistas</h3>
 
                                 <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor eget lectus quis varius. Nulla consectetur nibh vel molestie interdum. Morbi in rhoncus nisi. Praesent viverra lorem mi, a vulputate nulla consequat quis. Fusce purus nulla, aliquet nec massa non.</p>
                                 <p className="article__text pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum auctor tellus a bibendum. Curabitur mollis arcu in fringilla imperdiet. Sed pharetra, justo vitae tristique porta, magna odio rutrum ipsum, et gravida ipsum ipsum at turpis. Vestibulum massa justo, mollis et risus eget, rutrum semper odio. Sed sit amet laoreet tortor. Suspendisse tortor ligula, elementum eu felis in, ultricies aliquam metus. Nulla vulputate turpis et ipsum lobortis rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -294,7 +294,7 @@ function AboutPage(){
                                 </figure>
 
                                 <figure className="figure aspect-1/1 border-4 rounded-xl border-background-dark overflow-hidden w-[25%] absolute top-[20%] left-[20%]">
-                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\Logo Colibri - fundo preto 1.jpg" alt="" />
+                                    <img className="figure__img w-full h-full object-cover" src="imagens\pictures\colibri\Logo Colibri - fundo preto 1.jpg" alt="" />
                                 </figure>
                             </div>
                         </section>
