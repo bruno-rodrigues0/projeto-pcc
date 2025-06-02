@@ -1,6 +1,8 @@
 /* Interface */
 import type Member from "./memberInterface";
 
+/* Icons */
+import { Linkedin, FileUser } from "lucide-react"
 
 const students: Member[] = [
     {
@@ -12,13 +14,13 @@ const students: Member[] = [
             {
                 id: 1,
                 type: 'Linkedin',
-                icon: '<Linkedin />',
+                icon: <Linkedin />,
                 link: 'www.linkedin.com/in/gabrielmontalvaosantos',
             },
             {
                 id: 2,
                 type: 'Currículo Lattes',
-                icon: '<FileUser />',
+                icon: <FileUser />,
                 link: 'http://lattes.cnpq.br/6885978171378349',
             },
         ],
@@ -32,13 +34,13 @@ const students: Member[] = [
             {
                 id: 1,
                 type: 'Linkedin',
-                icon: '<Linkedin />',
+                icon: <Linkedin />,
                 link: 'https://www.linkedin.com/in/anajulia-almeidaa/',
             },
             {
                 id: 2,
                 type: 'Currículo Lattes',
-                icon: '<FileUser />',
+                icon: <FileUser />,
                 link: 'https://lattes.cnpq.br/9889140718302743',
             },
         ],
@@ -52,13 +54,13 @@ const students: Member[] = [
             {
                 id: 1,
                 type: 'Linkedin',
-                icon: '<Linkedin />',
+                icon: <Linkedin />,
                 link: '',
             },
             {
                 id: 2,
                 type: 'Currículo Lattes',
-                icon: '<FileUser />',
+                icon: <FileUser />,
                 link: 'http://lattes.cnpq.br/4346229364998441',
             },
         ],
@@ -72,7 +74,7 @@ const students: Member[] = [
             {
                 id: 1,
                 type: 'Linkedin',
-                icon: '<Linkedin />',
+                icon: <Linkedin />,
                 link: 'https://www.linkedin.com/in/l%C3%ADvia-alkimim-dos-santos-b50399304/',
             },
         ],
@@ -86,7 +88,7 @@ const students: Member[] = [
             {
                 id: 1,
                 type: 'Currículo Lattes',
-                icon: '<FileUser />',
+                icon: <FileUser />,
                 link: 'http://lattes.cnpq.br/4089408942488330',
             },
         ],
@@ -100,13 +102,13 @@ const students: Member[] = [
             {
                 id: 1,
                 type: 'GitHub',
-                icon: '<Linkedin />',
+                icon: <Linkedin />,
                 link: 'https://github.com/flA09VIO',
             },
             {
                 id: 2,
                 type: 'Currículo Lattes',
-                icon: '<FileUser />',
+                icon: <FileUser />,
                 link: 'https://lattes.cnpq.br/2883774366715128',
             },
         ],
@@ -114,19 +116,19 @@ const students: Member[] = [
     {
         id: 7,
         name: 'Jeovana Miranda Souza',
-        description: 'Técnico em Informática para Internet (Completo) e Superior em Análise e Desenvolvimento de Sistemas (Incompleto)',
+        description: 'Técnico em Informática para Internet e Superior em Análise e Desenvolvimento de Sistemas (Incompleto)',
         picture: '',
         links: [
             {
                 id: 1,
                 type: 'Linkedin',
-                icon: '<Linkedin />',
+                icon: <Linkedin />,
                 link: 'https://www.linkedin.com/in/jeovana-miranda-souza-677994220/',
             },
             {
                 id: 2,
                 type: 'Currículo Lattes',
-                icon: '<FileUser />',
+                icon: <FileUser />,
                 link: 'http://lattes.cnpq.br/8258499958307339',
             },
         ],

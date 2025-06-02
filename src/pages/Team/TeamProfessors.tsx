@@ -1,6 +1,9 @@
 /* Interface */
 import type Member from "./memberInterface";
 
+/* Icons */
+import { Linkedin, FileUser } from "lucide-react"
+
 const professors: Member[] = [
     {
         id: 1,
@@ -9,15 +12,9 @@ const professors: Member[] = [
         picture: '',
         links: [
             {
-                id: 1,
-                type: 'Linkedin',
-                icon: '<Linkedin />',
-                link: '',
-            },
-            {
                 id: 2,
                 type: 'Currículo Lattes',
-                icon: '<FileUser />',
+                icon: <FileUser />,
                 link: 'http://lattes.cnpq.br/8752533416247049',
             },
         ],
@@ -31,13 +28,13 @@ const professors: Member[] = [
             {
                 id: 1,
                 type: 'Linkedin',
-                icon: '<Linkedin />',
+                icon: <Linkedin />,
                 link: '',
             },
             {
                 id: 2,
                 type: 'Currículo Lattes',
-                icon: '<FileUser />',
+                icon: <FileUser />,
                 link: '',
             },
         ],
@@ -51,13 +48,13 @@ const professors: Member[] = [
             {
                 id: 1,
                 type: 'Linkedin',
-                icon: '<Linkedin />',
+                icon: <Linkedin />,
                 link: '',
             },
             {
                 id: 2,
                 type: 'Currículo Lattes',
-                icon: '<FileUser />',
+                icon: <FileUser />,
                 link: '',
             },
         ],
