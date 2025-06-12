@@ -22,16 +22,8 @@ const router = createBrowserRouter([
         element: <AboutPage/>
     },
     {
-        path: "/galeria",
-        element: <GalleryPage/>
-    },
-    {
         path: "/integrantes",
         element: <TeamPage/>
-    },
-    {
-        path: "/noticias",
-        element: <NewsPage/>
     },
 ])
 
