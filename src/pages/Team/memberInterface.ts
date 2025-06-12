@@ -1,16 +1,14 @@
-interface Links {
+type Links = {
     id: number,
     type: string,
-    icon: ReactElement,
+    icon: any,
     link: string,
 }
 
-interface Member {
+export type Member = {
     id: number,
     name: string,
     description: string,
     picture: string,
     links: Links[],
 }
-
-export default Member

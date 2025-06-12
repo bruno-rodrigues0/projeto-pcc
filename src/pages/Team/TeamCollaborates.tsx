@@ -1,5 +1,5 @@
 /* Interface */
-import type Member from "./memberInterface";
+import type {Member} from "./memberInterface";
 
 /* Icons */
 import { Linkedin, FileUser } from "lucide-react"
