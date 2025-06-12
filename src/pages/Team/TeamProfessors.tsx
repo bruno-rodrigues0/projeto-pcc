@@ -22,7 +22,7 @@ const professors: Member[] = [
     {
         id: 2,
         name: 'Dr. Reinaldo Cotrim',
-        description: '',
+        description: 'Doutorado em Ciência da Computação',
         picture: '',
         links: [
             {
@@ -42,7 +42,7 @@ const professors: Member[] = [
     {
         id: 3,
         name: 'Fábio Lima',
-        description: 'Doutorado em Agronomia',
+        description: '...',
         picture: '',
         links: [
             {
