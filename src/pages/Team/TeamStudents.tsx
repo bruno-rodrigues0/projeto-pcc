@@ -28,7 +28,7 @@ const students: Member[] = [
     {
         id: 2,
         name: 'Ana Júlia da Silva Almeida',
-        description: 'Análise e Desenvolvimento de Sistemas',
+        description: 'Análise e Desenvolvimento de Sistemas (incompleto)',
         picture: '',
         links: [
             {
@@ -48,7 +48,7 @@ const students: Member[] = [
     {
         id: 3,
         name: 'Rian Cesar Oliveira Souza',
-        description: 'Técnico em informática para a Internet',
+        description: 'Técnico em informática para a Internet (incompleto)',
         picture: '',
         links: [
             {
@@ -68,7 +68,7 @@ const students: Member[] = [
     {
         id: 4,
         name: 'Lívia Alkimim dos Santos',
-        description: 'Análise e Desenvolvimento de Sistemas',
+        description: 'Análise e Desenvolvimento de Sistemas (incompleto)',
         picture: '',
         links: [
             {

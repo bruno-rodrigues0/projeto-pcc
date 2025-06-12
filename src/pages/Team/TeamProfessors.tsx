@@ -9,7 +9,7 @@ const professors: Member[] = [
         id: 1,
         name: 'Dr. Leandro Gonçalves dos Santos',
         description: 'Doutorado em Agronomia',
-        picture: '',
+        picture: 'imagens/pictures/members/professors/Leandro.JPG',
         links: [
             {
                 id: 2,
