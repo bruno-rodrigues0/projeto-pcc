@@ -34,17 +34,12 @@ function AboutPage(){
             <Navigation/>
             <main className="main">
                 {/* Hero */}
-                <div className="main__background bg-linear-to-r from-highlight-light to-highlight-dark text-background-light">
-                    <section className="section section--hero py-15 grid md:grid-cols-2 gap-12">
+                <div className="main__background bg-highlight-light text-background-light">
+                    <section className="section section--hero py-15">
                         <article className="article flex flex-col justify-center gap-1.5">
                             <h1 className="article__title text-4xl font-extrabold">Quem Somos?</h1>
                             <p className="article__text text-xl">Somos o Educa Drones, transformando a educação com inovação, tecnologia e a paixão por voar rumo ao futuro.</p>
                         </article>
-                        <div className="section__figures flex justify-center">
-                            <figure className="figure aspect-16/9 border-4 rounded-xl border-background-light overflow-hidden max-w-xl">
-                                <img className="figure__img w-full h-full object-cover" src="imagens\pictures\ifsc\2023\todos-pista.jpg" alt="" />
-                            </figure>
-                        </div>
                     </section>
                 </div>
 
