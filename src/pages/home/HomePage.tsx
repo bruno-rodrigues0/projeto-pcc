@@ -74,15 +74,15 @@ function HomePage(){
                         <h2 className="section__title text-center text-light">Parceiros e Colaboradores</h2>
                         <div className="section__tracker flex xmd:gap-25 gap-10 justify-center  items-center">
                             <a href="">
-                                <img className="backdrop-saturate-0" src="imagens\apoiadores\prefeituraGuanambi.png" alt="" />
+                                <img className="" src="imagens\apoiadores\prefeituraGuanambi.png" alt="" />
                             </a>
 
                             <a href="">
-                                <img className="backdrop-saturate-0" src="imagens\apoiadores\ifbaiano.png" alt="" />
+                                <img className="" src="imagens\apoiadores\ifbaiano.png" alt="" />
                             </a>
                             
                             <a href="">
-                                <img className="backdrop-saturate-0" src="imagens\apoiadores\ceteia.png" alt="" />
+                                <img className="" src="imagens\apoiadores\ceteia.png" alt="" />
                             </a>
                         </div>
                     </section>
