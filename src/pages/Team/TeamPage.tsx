@@ -1,14 +1,122 @@
-/* Components */
+import { useState, useEffect } from "react";
 import Footer from "../../components/Footer"
 import Navigation from "../../components/Navigation"
 import MemberCard from "../../components/cards/MemberCard"
 
-/* Data Members */
-import collaborates from "./TeamCollaborates"
-import professors from "./TeamProfessors"
-import students from "./TeamStudents"
+interface TeamMember {
+    id: string;
+    name: string;
+    description?: string;
+    picture?: string;
+    role: 'PROFESSOR' | 'STUDENT' | 'COLLABORATOR';
+    active: boolean;
+    links?: Record<string, string>;
+}
 
 function TeamPage(){
+    const [professors, setProfessors] = useState<TeamMember[]>([]);
+    const [students, setStudents] = useState<TeamMember[]>([]);
+    const [collaborates, setCollaborates] = useState<TeamMember[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchTeamMembers = async () => {
+            try {
+                const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/team`);
+                
+                if (response.ok) {
+                    const members = await response.json();
+                    
+                    // Processar os dados da API
+                    const processedMembers = members.map((member: any) => ({
+                        id: member.id.toString(),
+                        name: member.name,
+                        description: member.description || '',
+                        picture: member.picture || '',
+                        role: member.role,
+                        active: true,
+                        links: member.links ? JSON.parse(member.links) : {}
+                    }));
+                    
+                    // Separar por categoria
+                    setProfessors(processedMembers.filter((member: TeamMember) => member.role === 'PROFESSOR'));
+                    setStudents(processedMembers.filter((member: TeamMember) => member.role === 'STUDENT'));
+                    setCollaborates(processedMembers.filter((member: TeamMember) => member.role === 'COLLABORATOR'));
+                } else {
+                    throw new Error('Failed to fetch team members');
+                }
+            } catch (error) {
+                console.error('Error fetching team members:', error);
+                // Em caso de erro, usar dados de fallback dos arquivos originais
+                const { default: professorsData } = await import('./TeamProfessors');
+                const { default: studentsData } = await import('./TeamStudents');
+                const { default: collaboratesData } = await import('./TeamCollaborates');
+                
+                // Converter formato antigo para novo
+                setProfessors(professorsData.map((p: any) => ({
+                    id: p.id.toString(),
+                    name: p.name,
+                    description: p.description,
+                    picture: p.picture,
+                    role: 'PROFESSOR' as const,
+                    active: true,
+                    links: p.links?.reduce((acc: any, link: any) => {
+                        if (link.type === 'Linkedin') acc.linkedin = link.link;
+                        if (link.type === 'Currículo Lattes') acc.lattes = link.link;
+                        return acc;
+                    }, {})
+                })));
+                
+                setStudents(studentsData.map((s: any) => ({
+                    id: s.id.toString(),
+                    name: s.name,
+                    description: s.description,
+                    picture: s.picture,
+                    role: 'STUDENT' as const,
+                    active: true,
+                    links: s.links?.reduce((acc: any, link: any) => {
+                        if (link.type === 'Linkedin') acc.linkedin = link.link;
+                        if (link.type === 'Currículo Lattes') acc.lattes = link.link;
+                        if (link.type === 'GitHub') acc.github = link.link;
+                        return acc;
+                    }, {})
+                })));
+                
+                setCollaborates(collaboratesData.map((c: any) => ({
+                    id: c.id.toString(),
+                    name: c.name,
+                    description: c.description,
+                    picture: c.picture,
+                    role: 'COLLABORATOR' as const,
+                    active: true,
+                    links: c.links?.reduce((acc: any, link: any) => {
+                        if (link.type === 'Linkedin') acc.linkedin = link.link;
+                        if (link.type === 'Currículo Lattes') acc.lattes = link.link;
+                        if (link.type === 'GitHub') acc.github = link.link;
+                        return acc;
+                    }, {})
+                })));
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchTeamMembers();
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="w-full min-h-[100lvh] poppins-regular text-base text-dark">
+                <Navigation/>
+                <main className="main">
+                    <div className="section py-20 text-center">
+                        <p>Carregando equipe...</p>
+                    </div>
+                </main>
+                <Footer/>
+            </div>
+        );
+    }
 
     return(
         <div className="w-full min-h-[100lvh] poppins-regular text-base text-dark">
@@ -31,7 +139,13 @@ function TeamPage(){
 
                     <section className="section__cards grid grid-cols-1 xmd:grid-cols-2 md:grid-cols-3 gap-8">
                         {professors.map((member) => (
-                            <MemberCard name={member.name} description={member.description} picture={member.picture} links={member.links}/> 
+                            <MemberCard 
+                                key={member.id}
+                                name={member.name} 
+                                description={member.description || ''} 
+                                picture={member.picture || ''} 
+                                links={member.links || {}}
+                            /> 
                         ))}
                     </section>
                 </section>
@@ -44,7 +158,13 @@ function TeamPage(){
 
                     <section className="section__cards grid grid-cols-1 xmd:grid-cols-2 md:grid-cols-3 gap-8">
                         {students.map((member) => (
-                            <MemberCard name={member.name} description={member.description} picture={member.picture} links={member.links}/> 
+                            <MemberCard 
+                                key={member.id}
+                                name={member.name} 
+                                description={member.description || ''} 
+                                picture={member.picture || ''} 
+                                links={member.links || {}}
+                            /> 
                         ))}
                     </section>
                 </section>
@@ -57,7 +177,13 @@ function TeamPage(){
 
                     <section className="section__cards grid grid-cols-1 xmd:grid-cols-2 md:grid-cols-3 gap-8">
                         {collaborates.map((member) => (
-                            <MemberCard name={member.name} description={member.description} picture={member.picture} links={member.links}/> 
+                            <MemberCard 
+                                key={member.id}
+                                name={member.name} 
+                                description={member.description || ''} 
+                                picture={member.picture || ''} 
+                                links={member.links || {}}
+                            /> 
                         ))}
                     </section>
                 </section>

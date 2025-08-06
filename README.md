@@ -1,23 +1,115 @@
-# Educa Drones - Site Institucional
+# Projeto Educa Drones - Sistema Completo
 
-Este repositório contém o código-fonte do site institucional do **Educa Drones**, um projeto educacional desenvolvido pelo Instituto Federal Baiano - Campus Guanambi, que visa integrar a metodologia STEAM (Ciência, Tecnologia, Engenharia, Artes e Matemática) no ensino de drones. O objetivo do site é divulgar o projeto, suas iniciativas, eventos e compartilhar os avanços e competições realizadas, envolvendo estudantes e educadores em atividades práticas de aprendizado.
+Sistema completo para o projeto Educa Drones, incluindo frontend institucional, backend API e sistema de administração.
 
-## Visão Geral
+## 🚀 Visão Geral
 
-O **Educa Drones** oferece uma plataforma inovadora de aprendizado prático, utilizando drones de asa rotativa para ensinar conceitos de física, matemática, engenharia e programação. Além disso, o projeto promove a participação de estudantes em competições de drones e workshops, criando uma experiência educacional imersiva e dinâmica.
+O **Educa Drones** é um projeto educacional desenvolvido pelo Instituto Federal Baiano - Campus Guanambi, que visa integrar a metodologia STEAM (Ciência, Tecnologia, Engenharia, Artes e Matemática) no ensino com drones.
 
-Este site serve como a principal fonte de informação sobre o projeto, fornecendo detalhes sobre sua missão, atividades e como outras instituições podem participar e implementar a metodologia STEAM com drones.
+Este repositório contém três sistemas integrados:
 
-## Funcionalidades
+1. **Frontend Principal** - Site institucional do Educa Drones
+2. **Backend API** - API REST para gerenciar dados
+3. **Sistema de Administração** - Interface para gerenciar conteúdo
 
-- **Home Page**: Apresentação do Educa Drones e seu impacto na educação.
-- **Sobre Nós**: Detalhes sobre a história do projeto, missão e impacto.
-- **Modelos de Drones**: Informações sobre os diferentes modelos de drones desenvolvidos pelo projeto.
-- **Competições e Eventos**: Destaque para eventos e competições onde os drones são usados como ferramentas educacionais.
-- **Oficinas e Workshops**: Calendário e informações sobre eventos e treinamentos.
-- **Contato**: Formulário de contato para parcerias e mais informações.
+## 📁 Estrutura do Projeto
 
-## Tecnologias Usadas
+```
+projeto-pcc/
+├── src/                    # Frontend principal (React + Vite)
+├── backend/               # Backend API (Node.js + Express + Prisma)
+├── admin-system/          # Sistema de administração (React)
+├── public/               # Arquivos estáticos
+└── README.md
+```
+
+## 🛠️ Tecnologias Utilizadas
+
+### Frontend Principal
+- **React 19** com TypeScript
+- **Vite** como bundler
+- **Tailwind CSS** para estilização
+- **React Router** para navegação
+
+### Backend
+- **Node.js** com TypeScript
+- **Express.js** como framework web
+- **Prisma** como ORM
+- **MySQL** como banco de dados
+
+### Sistema de Administração
+- **React** com TypeScript
+- **TanStack Query** para gerenciamento de estado
+- **Tailwind CSS** para UI
+
+## 🚀 Como Executar
+
+### 1. Backend
+```bash
+cd backend
+npm install
+# Configure .env com suas credenciais MySQL
+npm run db:push
+npm run db:seed
+npm run dev  # Roda na porta 3001
+```
+
+### 2. Frontend Principal
+```bash
+npm install
+npm run dev  # Roda na porta 5173
+```
+
+### 3. Sistema de Administração
+```bash
+cd admin-system
+npm install
+npm run dev  # Roda na porta 3000
+```
+
+## 📊 Funcionalidades Implementadas
+
+### ✅ Frontend Principal
+- Página inicial com seção de notícias dinâmica
+- Sistema de notícias completo (listagem e detalhes)
+- Integração com backend via API
+- Páginas: Home, Sobre, Equipe, Loja, Notícias
+
+### ✅ Backend API
+- CRUD completo para notícias, produtos e equipe
+- Sistema de publicação e destaques
+- Filtros e paginação
+- Endpoints RESTful documentados
+
+### ✅ Sistema de Administração
+- Dashboard com estatísticas
+- Gerenciamento completo de notícias
+- Interface moderna e responsiva
+- Formulários de criação/edição
+
+## 🗄️ Banco de Dados
+
+Tabelas principais:
+- **news** - Notícias do site
+- **products** - Produtos disponíveis  
+- **team_members** - Membros da equipe
+
+## 🔗 Endpoints da API
+
+- `GET/POST/PUT/DELETE /api/news` - Gestão de notícias
+- `GET/POST/PUT/DELETE /api/products` - Gestão de produtos
+- `GET/POST/PUT/DELETE /api/team` - Gestão da equipe
+
+## 🌐 URLs dos Sistemas
+
+- **Frontend**: http://localhost:5173
+- **Backend**: http://localhost:3001  
+- **Admin**: http://localhost:3000
+
+---
+
+**Desenvolvido por**: Bruno Rodrigues  
+**Instituição**: Instituto Federal Baiano - Campus Guanambi
 
 Este site foi desenvolvido utilizando as seguintes tecnologias:
 

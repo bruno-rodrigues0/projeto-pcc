@@ -7,7 +7,8 @@ import AboutPage from "../pages/AboutPage"
 import ShopPage from "../pages/shop/ShopPage"
 /* import GalleryPage from "../pages/GalleryPage" */
 import TeamPage from "../pages/Team/TeamPage"
-/* import NewsPage from "../pages/news/NewsPage" */
+import NewsListPage from "../pages/news/NewsListPage"
+import NewsDetailPage from "../pages/news/NewsDetailPage"
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,14 @@ const router = createBrowserRouter([
     {
         path: "/loja",
         element: <ShopPage/>
+    },
+    {
+        path: "/noticias",
+        element: <NewsListPage/>
+    },
+    {
+        path: "/noticias/:id",
+        element: <NewsDetailPage/>
     },
 ])
 

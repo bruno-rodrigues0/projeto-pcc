@@ -38,9 +38,11 @@ function ProductCard(props: ProductCardProps){
                     </span>
                     <a 
                         href={link} 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="button button--cta text-sm px-4 py-2 max-w-none w-auto"
                     >
-                        Ver Mais
+                        {link.includes('mercadolivre') ? 'Comprar no ML' : 'Ver Mais'}
                     </a>
                 </div>
             </div>
