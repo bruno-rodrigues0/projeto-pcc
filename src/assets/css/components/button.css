@@ -26,3 +26,20 @@
     background-color: var(--color-highlight-light);
     color: var(--color-background-light);
 }
+
+/* Product Card Styles */
+.card--product {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card--product:hover {
+    transform: translateY(-4px);
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

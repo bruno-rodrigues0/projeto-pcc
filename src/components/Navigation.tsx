@@ -29,6 +29,7 @@ function Navigation(props: any){
                 {/* Navigation */}
                 <ul className="nav__list hidden gap-5 md:flex">
                     <li className="nav__item"><Link to="/" className="nav__link">Início</Link></li>
+                    <li className="nav__item"><Link to="/loja" className="nav__link">Loja</Link></li>
                     <li className="nav__item"><Link to="/sobre" className='nav__link'>Quem Somos</Link></li>
                     <li className="nav__item"><Link to="/integrantes" className="nav__link">Nossa Equipe</Link></li>
                     <li className="nav__item"><a href='#contato' className="nav__link">Contato</a></li>
