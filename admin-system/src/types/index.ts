@@ -1,34 +1,39 @@
 export interface Product {
-  id: number;
-  name: string;
+  id: string;
+  title: string;
   description: string;
-  price: number;
+  price: string;
+  image?: string;
+  altImage?: string;
   category: string;
-  imageUrl?: string;
   mercadoLivreUrl?: string;
-  status: 'ACTIVE' | 'INACTIVE';
+  available: boolean;
+  featured: boolean;
   createdAt: string;
   updatedAt: string;
 }
 
 export interface TeamMember {
-  id: number;
+  id: string;
   name: string;
   role: 'PROFESSOR' | 'STUDENT' | 'COLLABORATOR';
   description?: string;
   picture?: string;
+  active: boolean;
   links?: string;
   createdAt: string;
   updatedAt: string;
 }
 
 export interface News {
-  id: number;
+  id: string;
   title: string;
   content: string;
-  summary?: string;
-  imageUrl?: string;
-  status: 'PUBLISHED' | 'DRAFT';
+  excerpt?: string;
+  image?: string;
+  altImage?: string;
+  published: boolean;
+  featured: boolean;
   createdAt: string;
   updatedAt: string;
 }

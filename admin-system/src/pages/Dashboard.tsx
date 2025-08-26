@@ -24,12 +24,12 @@ const Dashboard: React.FC = () => {
     {
       title: 'Notícias',
       value: news.length,
-      description: `${news.filter(n => n.status === 'PUBLISHED').length} publicadas`
+      description: `${news.filter(n => n.published).length} publicadas`
     },
     {
       title: 'Produtos',
       value: products.length,
-      description: `${products.filter(p => p.status === 'ACTIVE').length} ativos`
+      description: `${products.filter(p => p.available).length} disponíveis`
     },
     {
       title: 'Membros da Equipe',
@@ -78,10 +78,10 @@ const Dashboard: React.FC = () => {
             <div className="space-y-3">
               {news.slice(0, 5).map((newsItem) => (
                 <div key={newsItem.id} className="flex items-center space-x-3">
-                  {newsItem.imageUrl && (
+                  {newsItem.image && (
                     <img
                       className="h-8 w-8 rounded object-cover"
-                      src={newsItem.imageUrl}
+                      src={newsItem.image}
                       alt={newsItem.title}
                     />
                   )}
@@ -94,11 +94,11 @@ const Dashboard: React.FC = () => {
                     </p>
                   </div>
                   <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                    newsItem.status === 'PUBLISHED'
+                    newsItem.published
                       ? 'bg-green-100 text-green-800'
                       : 'bg-yellow-100 text-yellow-800'
                   }`}>
-                    {newsItem.status === 'PUBLISHED' ? 'Publicado' : 'Rascunho'}
+                    {newsItem.published ? 'Publicado' : 'Rascunho'}
                   </span>
                 </div>
               ))}
@@ -118,27 +118,27 @@ const Dashboard: React.FC = () => {
             <div className="space-y-3">
               {products.slice(0, 5).map((product) => (
                 <div key={product.id} className="flex items-center space-x-3">
-                  {product.imageUrl && (
+                  {product.image && (
                     <img
                       className="h-8 w-8 rounded object-cover"
-                      src={product.imageUrl}
-                      alt={product.name}
+                      src={product.image}
+                      alt={product.title}
                     />
                   )}
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-gray-900 truncate">
-                      {product.name}
+                      {product.title}
                     </p>
                     <p className="text-sm text-gray-500">
-                      R$ {product.price.toFixed(2)}
+                      R$ {parseFloat(product.price).toFixed(2)}
                     </p>
                   </div>
                   <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                    product.status === 'ACTIVE'
+                    product.available
                       ? 'bg-green-100 text-green-800'
                       : 'bg-red-100 text-red-800'
                   }`}>
-                    {product.status === 'ACTIVE' ? 'Ativo' : 'Inativo'}
+                    {product.available ? 'Disponível' : 'Indisponível'}
                   </span>
                 </div>
               ))}
