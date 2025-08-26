@@ -7,10 +7,11 @@ export const getProducts = async (): Promise<Product[]> => {
   if (!response.ok) {
     throw new Error('Erro ao carregar produtos')
   }
-  return response.json()
+  const result = await response.json()
+  return result.data || result
 }
 
-export const getProduct = async (id: number): Promise<Product> => {
+export const getProduct = async (id: string): Promise<Product> => {
   const response = await fetch(`${API_BASE_URL}/products/${id}`)
   if (!response.ok) {
     throw new Error('Erro ao carregar produto')
@@ -34,7 +35,7 @@ export const createProduct = async (data: Omit<Product, 'id' | 'createdAt' | 'up
   return response.json()
 }
 
-export const updateProduct = async (id: number, data: Partial<Product>): Promise<Product> => {
+export const updateProduct = async (id: string, data: Partial<Product>): Promise<Product> => {
   const response = await fetch(`${API_BASE_URL}/products/${id}`, {
     method: 'PUT',
     headers: {
@@ -50,7 +51,7 @@ export const updateProduct = async (id: number, data: Partial<Product>): Promise
   return response.json()
 }
 
-export const deleteProduct = async (id: number): Promise<void> => {
+export const deleteProduct = async (id: string): Promise<void> => {
   const response = await fetch(`${API_BASE_URL}/products/${id}`, {
     method: 'DELETE',
   })

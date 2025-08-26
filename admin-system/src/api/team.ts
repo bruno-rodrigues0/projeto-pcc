@@ -7,10 +7,11 @@ export const getTeamMembers = async (): Promise<TeamMember[]> => {
   if (!response.ok) {
     throw new Error('Erro ao carregar membros da equipe')
   }
-  return response.json()
+  const result = await response.json()
+  return result.data || result
 }
 
-export const getTeamMember = async (id: number): Promise<TeamMember> => {
+export const getTeamMember = async (id: string): Promise<TeamMember> => {
   const response = await fetch(`${API_BASE_URL}/team/${id}`)
   if (!response.ok) {
     throw new Error('Erro ao carregar membro da equipe')
@@ -34,7 +35,7 @@ export const createTeamMember = async (data: Omit<TeamMember, 'id' | 'createdAt'
   return response.json()
 }
 
-export const updateTeamMember = async (id: number, data: Partial<TeamMember>): Promise<TeamMember> => {
+export const updateTeamMember = async (id: string, data: Partial<TeamMember>): Promise<TeamMember> => {
   const response = await fetch(`${API_BASE_URL}/team/${id}`, {
     method: 'PUT',
     headers: {
@@ -50,7 +51,7 @@ export const updateTeamMember = async (id: number, data: Partial<TeamMember>): P
   return response.json()
 }
 
-export const deleteTeamMember = async (id: number): Promise<void> => {
+export const deleteTeamMember = async (id: string): Promise<void> => {
   const response = await fetch(`${API_BASE_URL}/team/${id}`, {
     method: 'DELETE',
   })
