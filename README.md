@@ -27,20 +27,25 @@ projeto-pcc/
 
 ### Frontend Principal
 - **React 19** com TypeScript
-- **Vite** como bundler
-- **Tailwind CSS** para estilização
-- **React Router** para navegação
+- **Vite** como bundler de alta performance
+- **Tailwind CSS** para estilização moderna
+- **React Router v7** para navegação SPA
+- **Lucide React** para ícones consistentes
 
 ### Backend
 - **Node.js** com TypeScript
 - **Express.js** como framework web
-- **Prisma** como ORM
-- **MySQL** como banco de dados
+- **Prisma** como ORM moderno
+- **MySQL** como banco de dados principal
+- **Cors & Helmet** para segurança
+- **Rate Limiting** para proteção de API
 
 ### Sistema de Administração
-- **React** com TypeScript
-- **TanStack Query** para gerenciamento de estado
-- **Tailwind CSS** para UI
+- **React 19** com TypeScript
+- **TanStack Query** para gerenciamento de estado assíncrono
+- **React Router DOM** para navegação
+- **Tailwind CSS** para UI responsiva
+- **Formulários controlados** com validação
 
 ## 🚀 Como Executar
 
@@ -70,57 +75,144 @@ npm run dev  # Roda na porta 3000
 ## 📊 Funcionalidades Implementadas
 
 ### ✅ Frontend Principal
-- Página inicial com seção de notícias dinâmica
-- Sistema de notícias completo (listagem e detalhes)
-- Integração com backend via API
-- Páginas: Home, Sobre, Equipe, Loja, Notícias
+- **Página inicial completa** - Site institucional com navegação responsiva
+- **Sistema de notícias dinâmico** - Integração completa com backend
+- **Página da equipe atualizada** - Busca dados do banco de dados via API
+- **Sistema de roteamento** - React Router para navegação entre páginas
+- **Design responsivo** - Tailwind CSS com componentes modernos
+- **Páginas funcionais**: Home, Sobre, Equipe, Loja, Notícias, Galeria
 
 ### ✅ Backend API
-- CRUD completo para notícias, produtos e equipe
-- Sistema de publicação e destaques
-- Filtros e paginação
-- Endpoints RESTful documentados
+- **CRUD completo** - Notícias, produtos e membros da equipe
+- **Sistema de publicação** - Controle de status (publicado/rascunho)
+- **Sistema de destaques** - Notícias e produtos em destaque
+- **Filtros avançados** - Busca por categoria, status, data
+- **Endpoints RESTful** - API documentada e padronizada
+- **Banco MySQL** - Prisma ORM para gerenciamento de dados
+- **Validação de dados** - Middleware de validação e sanitização
 
 ### ✅ Sistema de Administração
-- Dashboard com estatísticas
-- Gerenciamento completo de notícias
-- Interface moderna e responsiva
-- Formulários de criação/edição
+- **Dashboard moderno** - Estatísticas em tempo real com TanStack Query
+- **Gerenciamento de notícias** - CRUD completo com formulários dedicados
+- **Gerenciamento de produtos** - Interface para catálogo de produtos
+- **Gerenciamento de equipe** - Controle de membros e suas informações
+- **Formulários dedicados** - Páginas específicas para criação de conteúdo
+- **Interface responsiva** - Design clean com Tailwind CSS
+- **Ações rápidas** - Botões de editar/deletar em todas as listagens
+- **Estados de loading** - Feedback visual durante operações
 
 ## 🗄️ Banco de Dados
 
-Tabelas principais:
-- **news** - Notícias do site
-- **products** - Produtos disponíveis  
-- **team_members** - Membros da equipe
+### Estrutura das Tabelas
+
+**news** - Sistema de notícias
+- `id`, `title`, `content`, `excerpt`
+- `image`, `altImage` - Imagens e textos alternativos
+- `published`, `featured` - Controle de publicação e destaque
+- `createdAt`, `updatedAt` - Timestamps automáticos
+
+**products** - Catálogo de produtos
+- `id`, `title`, `description`, `price`
+- `image`, `altImage`, `category`
+- `available`, `featured` - Status de disponibilidade e destaque
+- `mercadoLivreUrl` - Link para Mercado Livre
+- `createdAt`, `updatedAt`
+
+**team_members** - Membros da equipe
+- `id`, `name`, `description`, `picture`
+- `role` - Enum: PROFESSOR, STUDENT, COLLABORATOR
+- `active` - Status ativo/inativo
+- `links` - JSON com redes sociais (LinkedIn, Lattes, GitHub)
+- `createdAt`, `updatedAt`
+
+### Relacionamentos
+- Todas as tabelas possuem soft delete capability
+- Campos timestamp automáticos para auditoria
+- Validações de integridade via Prisma
 
 ## 🔗 Endpoints da API
 
-- `GET/POST/PUT/DELETE /api/news` - Gestão de notícias
-- `GET/POST/PUT/DELETE /api/products` - Gestão de produtos
-- `GET/POST/PUT/DELETE /api/team` - Gestão da equipe
+### Notícias
+- `GET /api/news` - Listar notícias (com filtros e paginação)
+- `GET /api/news/:id` - Buscar notícia específica
+- `POST /api/news` - Criar nova notícia
+- `PUT /api/news/:id` - Atualizar notícia existente
+- `DELETE /api/news/:id` - Deletar notícia
+
+### Produtos
+- `GET /api/products` - Listar produtos (com filtros)
+- `GET /api/products/:id` - Buscar produto específico
+- `POST /api/products` - Criar novo produto
+- `PUT /api/products/:id` - Atualizar produto existente
+- `DELETE /api/products/:id` - Deletar produto
+
+### Equipe
+- `GET /api/team` - Listar membros da equipe
+- `GET /api/team/:id` - Buscar membro específico
+- `POST /api/team` - Adicionar novo membro
+- `PUT /api/team/:id` - Atualizar dados do membro
+- `DELETE /api/team/:id` - Remover membro
+
+### Health Check
+- `GET /api/health` - Verificar status da API
 
 ## 🌐 URLs dos Sistemas
 
-- **Frontend**: http://localhost:5173
-- **Backend**: http://localhost:3001  
-- **Admin**: http://localhost:3000
+- **Frontend Principal**: http://localhost:5173
+  - Site institucional do Educa Drones
+  - Sistema de notícias integrado
+  - Página da equipe dinâmica
+
+- **Backend API**: http://localhost:3001
+  - API REST completa
+  - Health check: http://localhost:3001/api/health
+  - Documentação: Endpoints listados acima
+
+- **Sistema de Administração**: http://localhost:3000
+  - Dashboard de gerenciamento
+  - CRUD de notícias, produtos e equipe
+  - Interface administrativa moderna
+
+## 🚀 Scripts Disponíveis
+
+### Raiz do Projeto (Frontend Principal)
+```bash
+npm run dev       # Servidor de desenvolvimento
+npm run build     # Build para produção
+npm run preview   # Preview do build
+npm run lint      # Verificação de código
+```
+
+### Backend
+```bash
+npm run dev       # Servidor com hot reload
+npm run build     # Compilar TypeScript
+npm run start     # Rodar versão compilada
+npm run db:push   # Aplicar mudanças do schema
+npm run db:seed   # Popular banco com dados
+npm run db:studio # Interface visual do banco
+```
+
+### Sistema de Administração
+```bash
+npm run dev       # Servidor na porta 3000
+npm run build     # Build para produção
+npm run preview   # Preview do build
+npm run lint      # Verificação de código
+```
 
 ---
 
-**Desenvolvido por**: Bruno Rodrigues  
-**Instituição**: Instituto Federal Baiano - Campus Guanambi
+**Desenvolvido por**: Bruno Rodrigues & Gustavo Costa  
+**Instituição**: Instituto Federal Baiano - Campus Guanambi  
+**Projeto**: Educa Drones - Metodologia STEAM com Drones
 
-Este site foi desenvolvido utilizando as seguintes tecnologias:
+### Stack Tecnológica Resumida
 
-- **HTML5**: Estruturação do conteúdo e estrutura do site.
-- **CSS3**: Estilo e design responsivo, garantindo que o site funcione em todos os dispositivos.
-- **JavaScript (ES6+)**: Interatividade no site, incluindo animações e formulários dinâmicos.
-- **React.js**: Biblioteca JavaScript para construir interfaces de usuário dinâmicas e responsivas.
-- **React Router**: Gerenciamento de rotas para navegação entre páginas.
-- **Tailwind CSS**: Framework de CSS para desenvolvimento rápido de layouts responsivos e estilizados.
-- **Node.js**: Ambiente de execução JavaScript no backend (se necessário para APIs ou funcionalidades de servidor).
-- **Vite**: Ferramenta de build e empacotamento de front-end de alta performance, usada para acelerar o desenvolvimento e otimizar a construção do site.
+- **Frontend**: React 19 + TypeScript + Vite + Tailwind CSS
+- **Backend**: Node.js + Express + TypeScript + Prisma + MySQL  
+- **Admin**: React + TanStack Query + React Router + TypeScript
+- **Deploy**: Preparado para Vercel (Frontend) e Railway/Heroku (Backend)
 
 ## Licença
 
@@ -129,12 +221,28 @@ Este projeto é licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LIC
 
 ## Criador
 
-Desenvolver web Gustavo Costa
+Criador: Gustavo Costa
 
 - **E-mail**: gustavosncosta@gmail.com
 - **Portfolio**: [www.gustavocosta.me](https://www.gustavocosta.me/)
 - **LinkedIn**: [Gustavo Costa](https://www.linkedin.com/in/gustavosncosta)
 - **GitHub**: [OGustavoCosta](https://github.com/OGustavoCosta)
+
+Desenvolvedores
+
+- **E-mail**: brunorodriguesmtv0@gmail.com
+- **LinkedIn**: [Bruno Rodrigues](https://www.linkedin.com/in/bruno-rodrigues-55b4b92b8)
+- **GitHub**: [Bruno Rodrigues](https://github.com/bruno-rodrigues0)
+
+---
+
+- **E-mail**: riancesar.contact@gmail.com
+- **GitHub**: [Rian Cesar](https://github.com/riancesaros)
+
+---
+
+- **E-mail**: gabriel.msantos7@hotmail.com
+- **GitHub**: [Gabriel Montalvão](https://github.com/msantos7gabriel)
 
 ---
 
