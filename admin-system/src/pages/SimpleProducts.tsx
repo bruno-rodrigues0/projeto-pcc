@@ -33,9 +33,6 @@ const SimpleProducts: React.FC = () => {
         </div>
         <div className="admin-card">
           <div className="text-center py-12">
-            <svg className="w-16 h-16 mx-auto mb-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
-            </svg>
             <p className="text-red-600 text-lg font-medium">Erro ao carregar produtos</p>
             <p className="text-gray-500 mt-2">Verifique se o backend está rodando</p>
           </div>
@@ -62,9 +59,6 @@ const SimpleProducts: React.FC = () => {
       <div className="admin-card overflow-hidden">
         {products.length === 0 ? (
           <div className="text-center py-12">
-            <svg className="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-            </svg>
             <h3 className="text-lg font-medium text-gray-900 mb-2">Nenhum produto encontrado</h3>
             <p className="text-gray-500 mb-6">Comece adicionando seu primeiro produto</p>
             <button className="btn-primary">
@@ -126,16 +120,12 @@ const SimpleProducts: React.FC = () => {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                      <div className="flex space-x-3">
-                        <button className="text-blue-600 hover:text-blue-900 hover:bg-blue-50 px-3 py-1 rounded-md transition-colors">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                          </svg>
+                      <div className="flex space-x-1">
+                        <button className="px-2 py-1 text-xs bg-blue-100 text-blue-700 hover:bg-blue-200 rounded font-medium transition-colors" title="Editar produto">
+                          ✏️ Editar
                         </button>
-                        <button className="text-red-600 hover:text-red-900 hover:bg-red-50 px-3 py-1 rounded-md transition-colors">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                          </svg>
+                        <button className="px-2 py-1 text-xs bg-red-100 text-red-700 hover:bg-red-200 rounded font-medium transition-colors" title="Deletar produto">
+                          🗑️ Deletar
                         </button>
                       </div>
                     </td>

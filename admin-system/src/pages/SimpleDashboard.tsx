@@ -103,6 +103,14 @@ const SimpleDashboard: React.FC = () => {
                     {product.available ? 'Disponível' : 'Indisponível'}
                   </span>
                 </div>
+                <div className="flex space-x-1">
+                  <button className="px-2 py-1 text-xs bg-blue-100 text-blue-700 hover:bg-blue-200 rounded font-medium transition-colors">
+                    ✏️ Editar
+                  </button>
+                  <button className="px-2 py-1 text-xs bg-red-100 text-red-700 hover:bg-red-200 rounded font-medium transition-colors">
+                    🗑️ Deletar
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -124,18 +132,28 @@ const SimpleDashboard: React.FC = () => {
             {news.slice(0, 5).map((newsItem: News) => (
               <div key={newsItem.id} className="p-4 rounded-lg border border-gray-100 hover:border-green-200 hover:bg-green-50/50 transition-all">
                 <div className="flex items-start justify-between mb-2">
-                  <h3 className="font-semibold text-gray-900 line-clamp-2">{newsItem.title}</h3>
-                  <div className="flex space-x-2 ml-4">
-                    {newsItem.published && (
-                      <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
-                        Publicada
-                      </span>
-                    )}
-                    {newsItem.featured && (
-                      <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">
-                        Destaque
-                      </span>
-                    )}
+                  <h3 className="font-semibold text-gray-900 line-clamp-2 flex-1">{newsItem.title}</h3>
+                  <div className="flex items-center space-x-2 ml-4">
+                    <div className="flex space-x-2">
+                      {newsItem.published && (
+                        <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
+                          Publicada
+                        </span>
+                      )}
+                      {newsItem.featured && (
+                        <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">
+                          Destaque
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex space-x-1">
+                      <button className="px-2 py-1 text-xs bg-blue-100 text-blue-700 hover:bg-blue-200 rounded font-medium transition-colors">
+                        ✏️ Editar
+                      </button>
+                      <button className="px-2 py-1 text-xs bg-red-100 text-red-700 hover:bg-red-200 rounded font-medium transition-colors">
+                        🗑️ Deletar
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <p className="text-sm text-gray-600 line-clamp-2 mb-2">{newsItem.content}</p>

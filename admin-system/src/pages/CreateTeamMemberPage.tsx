@@ -101,11 +101,6 @@ const CreateTeamMemberPage = () => {
               <h1 className="text-3xl font-bold text-gray-900 text-gradient">Adicionar Membro da Equipe</h1>
               <p className="text-gray-600 mt-1">Adicione um novo membro à equipe</p>
             </div>
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-              </svg>
-            </div>
           </div>
         </div>
       </div>
@@ -116,10 +111,7 @@ const CreateTeamMemberPage = () => {
           {/* Personal Information Card */}
           <div className="admin-card">
             <div className="border-b border-gray-100 pb-4 mb-6">
-              <h2 className="text-xl font-semibold text-gray-900 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
+              <h2 className="text-xl font-semibold text-gray-900">
                 Informações Pessoais
               </h2>
               <p className="text-gray-600 text-sm">Dados principais do membro</p>
@@ -210,10 +202,7 @@ const CreateTeamMemberPage = () => {
           {/* Contact and Links Card */}
           <div className="admin-card">
             <div className="border-b border-gray-100 pb-4 mb-6">
-              <h2 className="text-xl font-semibold text-gray-900 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                </svg>
+              <h2 className="text-xl font-semibold text-gray-900">
                 Contato e Redes Sociais
               </h2>
               <p className="text-gray-600 text-sm">Links e informações de contato</p>
@@ -260,11 +249,7 @@ const CreateTeamMemberPage = () => {
           {(formData.name || formData.role || formData.description) && (
             <div className="admin-card bg-blue-50 border-blue-200">
               <div className="border-b border-blue-200 pb-4 mb-6">
-                <h2 className="text-xl font-semibold text-blue-900 flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
+                <h2 className="text-xl font-semibold text-blue-900">
                   Pré-visualização
                 </h2>
                 <p className="text-blue-700 text-sm">Como aparecerá no site</p>
