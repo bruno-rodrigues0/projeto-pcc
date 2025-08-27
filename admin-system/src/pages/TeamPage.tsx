@@ -177,22 +177,9 @@ const TeamPage: React.FC = () => {
                 {team.map((member) => (
                   <tr key={member.id}>
                     <td>
-                      <div className="flex items-center">
-                        {member.image && (
-                          <img
-                            className="h-12 w-12 rounded-full object-cover mr-4 border border-gray-200"
-                            src={member.image}
-                            alt={member.name}
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement;
-                              target.src = '/placeholder-avatar.png';
-                            }}
-                          />
-                        )}
-                        <div>
-                          <div className="text-sm font-semibold text-gray-900">{member.name}</div>
-                          <div className="text-sm text-gray-500 line-clamp-2">{member.bio}</div>
-                        </div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-900">{member.name}</div>
+                        <div className="text-sm text-gray-500 line-clamp-2">{member.bio}</div>
                       </div>
                     </td>
                     <td>

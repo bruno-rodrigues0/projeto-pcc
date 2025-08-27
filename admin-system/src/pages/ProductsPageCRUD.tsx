@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 import { getProducts, createProduct, updateProduct, deleteProduct } from '../api/products';
 import type { Product } from '../types';
 
 const SimpleProducts: React.FC = () => {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [formData, setFormData] = useState({
@@ -142,7 +144,7 @@ const SimpleProducts: React.FC = () => {
           <h1 className="text-3xl font-bold text-gradient mb-2">Produtos</h1>
           <p className="text-gray-600">Gerencie produtos do Educa Drones</p>
         </div>
-        <button onClick={openCreateModal} className="btn-primary">
+        <button onClick={() => navigate('/products/create')} className="btn-primary">
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
           </svg>
@@ -153,12 +155,9 @@ const SimpleProducts: React.FC = () => {
       <div className="admin-card overflow-hidden">
         {products.length === 0 ? (
           <div className="text-center py-12">
-            <svg className="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-            </svg>
             <h3 className="text-lg font-medium text-gray-900 mb-2">Nenhum produto encontrado</h3>
             <p className="text-gray-500 mb-6">Comece adicionando o primeiro produto</p>
-            <button onClick={openCreateModal} className="btn-primary">
+            <button onClick={() => navigate('/products/create')} className="btn-primary">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
               </svg>
@@ -181,22 +180,9 @@ const SimpleProducts: React.FC = () => {
                 {products.map((product: Product) => (
                   <tr key={product.id}>
                     <td>
-                      <div className="flex items-center">
-                        {product.image && (
-                          <img
-                            className="h-12 w-12 rounded-lg object-cover mr-4 border border-gray-200"
-                            src={product.image}
-                            alt={product.title}
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement;
-                              target.src = '/placeholder-product.png';
-                            }}
-                          />
-                        )}
-                        <div>
-                          <div className="text-sm font-semibold text-gray-900">{product.title}</div>
-                          <div className="text-sm text-gray-500 line-clamp-2">{product.description}</div>
-                        </div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-900">{product.title}</div>
+                        <div className="text-sm text-gray-500 line-clamp-2">{product.description}</div>
                       </div>
                     </td>
                     <td>

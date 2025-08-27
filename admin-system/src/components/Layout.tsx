@@ -21,59 +21,44 @@ const Layout = ({ children }: LayoutProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="admin-layout">
       {/* Sidebar */}
-      <div className="fixed inset-y-0 left-0 z-50 w-64 sidebar-nav shadow-2xl">
-        <div className="flex h-16 items-center justify-center border-b border-white/20">
-          <h1 className="text-xl font-bold text-white text-gradient-white">
-            Educa Drones Admin
-          </h1>
+      <aside className="admin-sidebar">
+        <div className="sidebar-header">
+          <h1 className="sidebar-title">Educa Drones Admin</h1>
         </div>
-        <nav className="mt-8 px-4">
-          <ul className="space-y-2">
-            {navigation.map((item) => {
-              const Icon = item.icon;
-              return (
-                <li key={item.name}>
-                  <Link
-                    to={item.href}
-                    className={`nav-item flex items-center gap-3 px-3 py-3 text-sm font-medium transition-all duration-300 ${
-                      isActive(item.href)
-                        ? 'nav-item-active text-white'
-                        : 'text-blue-100 hover:text-white'
-                    }`}
-                  >
-                    <Icon className="h-5 w-5" />
-                    {item.name}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+        <nav className="sidebar-nav">
+          {navigation.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`nav-link ${isActive(item.href) ? 'nav-link-active' : ''}`}
+              >
+                <Icon className="nav-icon" />
+                <span>{item.name}</span>
+              </Link>
+            );
+          })}
         </nav>
-      </div>
+      </aside>
 
       {/* Main content */}
-      <div className="pl-64">
-        <header className="header-admin sticky top-0 z-40">
-          <div className="flex h-16 items-center justify-between px-6">
-            <h2 className="text-lg font-semibold text-gray-900">
-              Sistema de Administração
-            </h2>
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-500 font-medium">
-                Educa Drones
-              </span>
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs font-bold">ED</span>
+      <div className="admin-content">
+        <header className="admin-header">
+          <div className="header-content">
+            <h2 className="header-title">Sistema de Administração</h2>
+            <div className="header-user">
+              <span className="user-text">Educa Drones</span>
+              <div className="user-avatar">
+                <span>ED</span>
               </div>
             </div>
           </div>
         </header>
-        <main className="p-6">
-          <div className="fade-in">
-            {children}
-          </div>
+        <main className="admin-main">
+          {children}
         </main>
       </div>
     </div>

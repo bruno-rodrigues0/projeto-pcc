@@ -91,18 +91,9 @@ const TeamManagement: React.FC = () => {
             {team.map((member) => (
               <tr key={member.id}>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center">
-                    {member.picture && (
-                      <img
-                        className="h-10 w-10 rounded-full mr-4"
-                        src={member.picture}
-                        alt={member.name}
-                      />
-                    )}
-                    <div>
-                      <div className="text-sm font-medium text-gray-900">
-                        {member.name}
-                      </div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-900">
+                      {member.name}
                     </div>
                   </div>
                 </td>

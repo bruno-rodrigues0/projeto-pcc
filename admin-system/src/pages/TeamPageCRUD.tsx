@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 import { getTeamMembers, createTeamMember, updateTeamMember, deleteTeamMember } from '../api/team';
 import type { TeamMember } from '../types';
 
 const TeamPage: React.FC = () => {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingMember, setEditingMember] = useState<TeamMember | null>(null);
   const [formData, setFormData] = useState({
@@ -143,7 +145,7 @@ const TeamPage: React.FC = () => {
           <h1 className="text-3xl font-bold text-gradient mb-2">Equipe</h1>
           <p className="text-gray-600">Gerencie os membros da equipe Educa Drones</p>
         </div>
-        <button onClick={openCreateModal} className="btn-primary">
+        <button onClick={() => navigate('/team/create')} className="btn-primary">
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
           </svg>
@@ -154,12 +156,9 @@ const TeamPage: React.FC = () => {
       <div className="admin-card overflow-hidden">
         {team.length === 0 ? (
           <div className="text-center py-12">
-            <svg className="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-            </svg>
             <h3 className="text-lg font-medium text-gray-900 mb-2">Nenhum membro encontrado</h3>
             <p className="text-gray-500 mb-6">Comece adicionando o primeiro membro da equipe</p>
-            <button onClick={openCreateModal} className="btn-primary">
+            <button onClick={() => navigate('/team/create')} className="btn-primary">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
               </svg>
@@ -182,22 +181,9 @@ const TeamPage: React.FC = () => {
                 {team.map((member) => (
                   <tr key={member.id}>
                     <td>
-                      <div className="flex items-center">
-                        {member.picture && (
-                          <img
-                            className="h-12 w-12 rounded-full object-cover mr-4 border border-gray-200"
-                            src={member.picture}
-                            alt={member.name}
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement;
-                              target.src = '/placeholder-avatar.png';
-                            }}
-                          />
-                        )}
-                        <div>
-                          <div className="text-sm font-semibold text-gray-900">{member.name}</div>
-                          <div className="text-sm text-gray-500 line-clamp-2">{member.description}</div>
-                        </div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-900">{member.name}</div>
+                        <div className="text-sm text-gray-500 line-clamp-2">{member.description}</div>
                       </div>
                     </td>
                     <td>

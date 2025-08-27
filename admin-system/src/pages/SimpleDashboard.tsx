@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getProducts } from '../api/products';
 import { getNews } from '../api/news';
 import { getTeamMembers } from '../api/team';
-import type { Product, News, TeamMember } from '../types';
+import type { Product, News } from '../types';
 
 const SimpleDashboard: React.FC = () => {
   const { data: products = [], isLoading: productsLoading } = useQuery({
@@ -26,7 +26,7 @@ const SimpleDashboard: React.FC = () => {
       <div className="p-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Dashboard</h1>
         <div className="flex items-center justify-center py-12">
-          <div className="loading-spinner w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full"></div>
+          <div className="loading-spinner"></div>
           <span className="ml-3 text-gray-600">Carregando dados...</span>
         </div>
       </div>
@@ -53,48 +53,27 @@ const SimpleDashboard: React.FC = () => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="stat-card group">
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-700 mb-1">Produtos</h3>
-              <p className="text-3xl font-bold text-blue-600">{products.length}</p>
-              <p className="text-sm text-gray-500 mt-1">Total de produtos</p>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-              </svg>
-            </div>
+        <div className="stat-card">
+          <div>
+            <h3 className="text-lg font-semibold text-gray-700 mb-1">Produtos</h3>
+            <p className="text-3xl font-bold text-blue-600">{products.length}</p>
+            <p className="text-sm text-gray-500 mt-1">Total de produtos</p>
           </div>
         </div>
         
-        <div className="stat-card group">
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-700 mb-1">Notícias</h3>
-              <p className="text-3xl font-bold text-green-600">{news.length}</p>
-              <p className="text-sm text-gray-500 mt-1">Total de notícias</p>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-              </svg>
-            </div>
+        <div className="stat-card">
+          <div>
+            <h3 className="text-lg font-semibold text-gray-700 mb-1">Notícias</h3>
+            <p className="text-3xl font-bold text-green-600">{news.length}</p>
+            <p className="text-sm text-gray-500 mt-1">Total de notícias</p>
           </div>
         </div>
         
-        <div className="stat-card group">
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-700 mb-1">Equipe</h3>
-              <p className="text-3xl font-bold text-purple-600">{team.length}</p>
-              <p className="text-sm text-gray-500 mt-1">Membros da equipe</p>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-              </svg>
-            </div>
+        <div className="stat-card">
+          <div>
+            <h3 className="text-lg font-semibold text-gray-700 mb-1">Equipe</h3>
+            <p className="text-3xl font-bold text-purple-600">{team.length}</p>
+            <p className="text-sm text-gray-500 mt-1">Membros da equipe</p>
           </div>
         </div>
       </div>
@@ -110,17 +89,8 @@ const SimpleDashboard: React.FC = () => {
           <div className="space-y-4">
             {products.slice(0, 5).map((product: Product) => (
               <div key={product.id} className="flex items-center space-x-4 p-4 rounded-lg border border-gray-100 hover:border-blue-200 hover:bg-blue-50/50 transition-all">
-                <img 
-                  src={product.image} 
-                  alt={product.name}
-                  className="w-12 h-12 rounded-lg object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = '/placeholder-product.png';
-                  }}
-                />
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-gray-900 truncate">{product.name}</h3>
+                  <h3 className="font-semibold text-gray-900 truncate">{product.title}</h3>
                   <p className="text-sm text-gray-600">{product.category}</p>
                 </div>
                 <div className="flex flex-col items-end">
@@ -138,9 +108,6 @@ const SimpleDashboard: React.FC = () => {
           </div>
           {products.length === 0 && (
             <div className="text-center py-8 text-gray-500">
-              <svg className="w-12 h-12 mx-auto mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-              </svg>
               <p>Nenhum produto encontrado</p>
             </div>
           )}
@@ -180,9 +147,6 @@ const SimpleDashboard: React.FC = () => {
           </div>
           {news.length === 0 && (
             <div className="text-center py-8 text-gray-500">
-              <svg className="w-12 h-12 mx-auto mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-              </svg>
               <p>Nenhuma notícia encontrada</p>
             </div>
           )}

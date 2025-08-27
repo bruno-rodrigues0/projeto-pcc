@@ -92,21 +92,12 @@ const ProductsManagement: React.FC = () => {
             {products.map((product) => (
               <tr key={product.id}>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center">
-                    {product.imageUrl && (
-                      <img
-                        className="h-10 w-10 rounded-full mr-4"
-                        src={product.imageUrl}
-                        alt={product.name}
-                      />
-                    )}
-                    <div>
-                      <div className="text-sm font-medium text-gray-900">
-                        {product.name}
-                      </div>
-                      <div className="text-sm text-gray-500 max-w-xs truncate">
-                        {product.description}
-                      </div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-900">
+                      {product.name}
+                    </div>
+                    <div className="text-sm text-gray-500 max-w-xs truncate">
+                      {product.description}
                     </div>
                   </div>
                 </td>

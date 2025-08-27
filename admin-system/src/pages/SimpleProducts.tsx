@@ -100,22 +100,9 @@ const SimpleProducts: React.FC = () => {
                 {products.map((product: Product) => (
                   <tr key={product.id} className="hover:bg-blue-50/50 transition-colors">
                     <td className="px-6 py-4">
-                      <div className="flex items-center">
-                        {product.image && (
-                          <img
-                            className="h-12 w-12 rounded-lg object-cover mr-4 border border-gray-200"
-                            src={product.image}
-                            alt={product.title}
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement;
-                              target.src = '/placeholder-product.png';
-                            }}
-                          />
-                        )}
-                        <div className="flex-1 min-w-0">
-                          <div className="text-sm font-semibold text-gray-900 truncate">{product.title}</div>
-                          <div className="text-sm text-gray-500 line-clamp-2">{product.description}</div>
-                        </div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-900 truncate">{product.title}</div>
+                        <div className="text-sm text-gray-500 line-clamp-2">{product.description}</div>
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
