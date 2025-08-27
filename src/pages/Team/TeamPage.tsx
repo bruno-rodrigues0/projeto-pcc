@@ -25,18 +25,21 @@ function TeamPage(){
                 const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/team`);
                 
                 if (response.ok) {
-                    const members = await response.json();
+                    const data = await response.json();
+                    const members = data.data || data; // Aceita tanto {data: []} quanto []
                     
-                    // Processar os dados da API
-                    const processedMembers = members.map((member: any) => ({
-                        id: member.id.toString(),
-                        name: member.name,
-                        description: member.description || '',
-                        picture: member.picture || '',
-                        role: member.role,
-                        active: true,
-                        links: member.links ? JSON.parse(member.links) : {}
-                    }));
+                    // Processar os dados da API e filtrar ativos
+                    const processedMembers = members
+                        .filter((member: any) => member.active) // Só membros ativos
+                        .map((member: any) => ({
+                            id: member.id.toString(),
+                            name: member.name,
+                            description: member.description || '',
+                            picture: member.picture || '',
+                            role: member.role,
+                            active: member.active,
+                            links: member.links ? JSON.parse(member.links) : {}
+                        }));
                     
                     // Separar por categoria
                     setProfessors(processedMembers.filter((member: TeamMember) => member.role === 'PROFESSOR'));
@@ -48,54 +51,62 @@ function TeamPage(){
             } catch (error) {
                 console.error('Error fetching team members:', error);
                 // Em caso de erro, usar dados de fallback dos arquivos originais
-                const { default: professorsData } = await import('./TeamProfessors');
-                const { default: studentsData } = await import('./TeamStudents');
-                const { default: collaboratesData } = await import('./TeamCollaborates');
-                
-                // Converter formato antigo para novo
-                setProfessors(professorsData.map((p: any) => ({
-                    id: p.id.toString(),
-                    name: p.name,
-                    description: p.description,
-                    picture: p.picture,
-                    role: 'PROFESSOR' as const,
-                    active: true,
-                    links: p.links?.reduce((acc: any, link: any) => {
-                        if (link.type === 'Linkedin') acc.linkedin = link.link;
-                        if (link.type === 'Currículo Lattes') acc.lattes = link.link;
-                        return acc;
-                    }, {})
-                })));
-                
-                setStudents(studentsData.map((s: any) => ({
-                    id: s.id.toString(),
-                    name: s.name,
-                    description: s.description,
-                    picture: s.picture,
-                    role: 'STUDENT' as const,
-                    active: true,
-                    links: s.links?.reduce((acc: any, link: any) => {
-                        if (link.type === 'Linkedin') acc.linkedin = link.link;
-                        if (link.type === 'Currículo Lattes') acc.lattes = link.link;
-                        if (link.type === 'GitHub') acc.github = link.link;
-                        return acc;
-                    }, {})
-                })));
-                
-                setCollaborates(collaboratesData.map((c: any) => ({
-                    id: c.id.toString(),
-                    name: c.name,
-                    description: c.description,
-                    picture: c.picture,
-                    role: 'COLLABORATOR' as const,
-                    active: true,
-                    links: c.links?.reduce((acc: any, link: any) => {
-                        if (link.type === 'Linkedin') acc.linkedin = link.link;
-                        if (link.type === 'Currículo Lattes') acc.lattes = link.link;
-                        if (link.type === 'GitHub') acc.github = link.link;
-                        return acc;
-                    }, {})
-                })));
+                try {
+                    const { default: professorsData } = await import('./TeamProfessors');
+                    const { default: studentsData } = await import('./TeamStudents');
+                    const { default: collaboratesData } = await import('./TeamCollaborates');
+                    
+                    // Converter formato antigo para novo
+                    setProfessors(professorsData.map((p: any) => ({
+                        id: p.id.toString(),
+                        name: p.name,
+                        description: p.description,
+                        picture: p.picture,
+                        role: 'PROFESSOR' as const,
+                        active: true,
+                        links: p.links?.reduce((acc: any, link: any) => {
+                            if (link.type === 'Linkedin') acc.linkedin = link.link;
+                            if (link.type === 'Currículo Lattes') acc.lattes = link.link;
+                            return acc;
+                        }, {})
+                    })));
+                    
+                    setStudents(studentsData.map((s: any) => ({
+                        id: s.id.toString(),
+                        name: s.name,
+                        description: s.description,
+                        picture: s.picture,
+                        role: 'STUDENT' as const,
+                        active: true,
+                        links: s.links?.reduce((acc: any, link: any) => {
+                            if (link.type === 'Linkedin') acc.linkedin = link.link;
+                            if (link.type === 'Currículo Lattes') acc.lattes = link.link;
+                            if (link.type === 'GitHub') acc.github = link.link;
+                            return acc;
+                        }, {})
+                    })));
+                    
+                    setCollaborates(collaboratesData.map((c: any) => ({
+                        id: c.id.toString(),
+                        name: c.name,
+                        description: c.description,
+                        picture: c.picture,
+                        role: 'COLLABORATOR' as const,
+                        active: true,
+                        links: c.links?.reduce((acc: any, link: any) => {
+                            if (link.type === 'Linkedin') acc.linkedin = link.link;
+                            if (link.type === 'Currículo Lattes') acc.lattes = link.link;
+                            if (link.type === 'GitHub') acc.github = link.link;
+                            return acc;
+                        }, {})
+                    })));
+                } catch (fallbackError) {
+                    console.error('Error loading fallback data:', fallbackError);
+                    // Se nem o fallback funcionar, deixar arrays vazios
+                    setProfessors([]);
+                    setStudents([]);
+                    setCollaborates([]);
+                }
             } finally {
                 setLoading(false);
             }
